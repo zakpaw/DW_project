@@ -1,9 +1,12 @@
 from faker import Faker # 👾
 from collections import defaultdict
+from pathlib import Path
 import pandas as pd
 import random
 import datetime as dt
+import os
 
+HOME_DIR = Path(os.getcwd()).parent
 
 
 class DB_entity(object):
@@ -15,7 +18,7 @@ class DB_entity(object):
 
     def __str__(self):
         # bulk insert
-        file_name = "data_"+self.name+".csv"
+        file_name = "data_"+self.name+str(self.T)+".csv"
         
         df = pd.DataFrame(self.data)
 
@@ -25,7 +28,9 @@ class DB_entity(object):
 
         mode = "w" if self.T == 0 else "a"
         header = "infer" if self.T == 0 else None
-        df.to_csv(file_name, index=False, sep='|', mode=mode, header=header)
+        
+        endpath = os.path.join(HOME_DIR, "data", file_name)
+        df.to_csv(endpath, index=False, sep='|', mode=mode, header=header)
 
         write = f"BULK INSERT {self.name}\nFROM '{file_name}'\nWITH "
         params = "(FIRSTROW = 2,\nFIELDTERMINATOR = '|',\nROWTERMINATOR='0x0a');\n\n"
@@ -194,7 +199,8 @@ def main():
             else:
                 mode = "a"
 
-            f = open("data.sql", mode)
+            path = os.path.join(HOME_DIR, "db", "load_csv.sql")
+            f = open(path, mode)
             entity = DB_entity(tab, fake_data)
             if period == 1:
                 entity.nextT()

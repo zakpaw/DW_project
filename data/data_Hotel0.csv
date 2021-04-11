@@ -1,0 +1,51 @@
+hotel_ID|name|address|city|country|starting_hour|ending_hour|opinion|is_befriended
+0|Rodriguez, Figueroa and Sanchez|819 Johnson CourseEast William, OH 26563|Robinsonshire|Fiji|15|13|2|No
+1|Blake and Sons|2351 Noah Knolls Suite 940Herrerafurt, OH 38928|Barbaraland|Aruba|13|11|8|No
+2|Perez, Roberts and Miller|4752 Kelly SkywayJacquelineland, SC 22932|East Steven|Faroe Islands|13|11|9|No
+3|Watts, Robinson and Nguyen|05641 Robin PortJasonfort, SD 60643|West Donald|Samoa|12|10|8|No
+4|Ryan, Burgess and Patterson|28710 Eric Estate Suite 916Carlsonmouth, KS 73013|Lake Jenniferside|Sao Tome and Principe|13|11|8|No
+5|Mack-Peterson|0482 Monica HillsEast Nathaniel, ND 70015|New Mariotown|Bouvet Island (Bouvetoya)|14|12|1|No
+6|Koch-Decker|91171 David MountainsWest Allison, NE 28261|Lake Larry|Paraguay|14|12|8|Yes
+7|Brooks, Lam and Hayes|0983 Adrian StationEast Carloston, MA 09788|West Elizabeth|Croatia|14|12|4|No
+8|Anderson, Walls and Duncan|3116 Henderson Mountain Apt. 106Laurenville, ID 25432|Taylorburgh|Fiji|15|13|2|No
+9|Wright-Leblanc|80132 Tucker ForestBarreraburgh, AL 51674|Saramouth|France|15|13|9|No
+10|Horton-Cross|34309 Julie Centers Apt. 978North Susan, HI 09482|Lake Michellefurt|British Indian Ocean Territory (Chagos Archipelago)|15|13|8|No
+11|Sanchez, Wheeler and Harvey|3534 Anderson Rue Suite 751South Christineshire, CA 70969|New Joseph|Venezuela|13|11|1|No
+12|Ibarra-Suarez|8498 Elizabeth PlazaSarahville, DC 35165|North Juliaberg|Faroe Islands|12|10|10|Yes
+13|Jacobs-Robbins|740 Cynthia Village Suite 005Lake Tina, WA 58413|Hoffmanville|Belarus|14|12|1|Yes
+14|Mckee, Gardner and Davenport|2045 Rachel FordsLake Curtis, OH 53765|East Michelle|South Georgia and the South Sandwich Islands|13|11|1|No
+15|Keith Inc|3421 Brennan Walks Suite 337Kevinbury, AK 87012|South Mark|Tonga|15|13|9|Yes
+16|Rasmussen LLC|850 Natalie Green Apt. 940New Ryanmouth, PA 67534|South Rachelborough|Equatorial Guinea|14|12|10|Yes
+17|Fletcher Inc|6159 Alvarado CrossingWilliamchester, MO 91885|Angelaborough|Italy|13|11|4|Yes
+18|Bentley, Byrd and Orr|8044 Russell Prairie Suite 777New Thomas, WY 96964|Lake Christopher|Malawi|12|10|8|Yes
+19|Schultz, Rogers and Cardenas|32003 Carr Trafficway Apt. 769Lake Heather, MO 32480|Lake Grace|Uganda|14|12|9|No
+20|Osborne and Sons|83172 Contreras Points Suite 798Rivasside, GA 97973|Colebury|Tajikistan|15|13|9|No
+21|Ramirez, Strickland and Washington|43455 Devon Fort Suite 231Russellside, MT 08662|Port Robert|United Kingdom|14|12|9|Yes
+22|Shah, Smith and Gilmore|54668 Tracy Groves Suite 706Elizabethfurt, GA 61762|New Amanda|United States of America|12|10|7|Yes
+23|Vargas-Alvarado|72046 Lewis Islands Suite 646Maryfort, WA 71203|West Jeffreyland|Slovakia (Slovak Republic)|12|10|7|No
+24|Williams, Johnson and Wright|27193 Lyons TrafficwayGaryville, GA 41269|New Anthonyport|Montserrat|12|10|8|Yes
+25|Odonnell, Brooks and David|49190 Patel ShoreCaseymouth, MT 64752|South Susanmouth|Russian Federation|15|13|3|No
+26|Graham Ltd|877 Petersen Ramp Suite 531Nicolebury, NH 75192|Rogersfort|Thailand|15|13|2|Yes
+27|White-Lewis|9480 Christopher Stravenue Suite 783Brewerfort, WY 02761|West Jeffreybury|Gambia|15|13|10|No
+28|Perkins, Kennedy and Schmidt|7444 David Fields Suite 182East Joanna, VA 77779|Tinaborough|French Polynesia|15|13|9|Yes
+29|Ward LLC|0084 Dana TerraceGarciatown, LA 62025|Alexanderburgh|Austria|12|10|2|No
+30|Everett-Woods|1902 Lisa Hollow Apt. 318Obrienbury, NC 50357|Kerrport|Tokelau|13|11|1|Yes
+31|Branch, Torres and Oliver|34123 Andrea EstateSouth Shannonfort, AZ 30841|Jasminemouth|Barbados|15|13|2|No
+32|Hall, Baker and Moody|1832 Serrano CliffsEast Laurashire, LA 58061|South Haleyfurt|Western Sahara|13|11|7|No
+33|Mason-Snyder|5940 Jeremy SpringPort Emilyview, AZ 99626|South April|Kenya|14|12|4|No
+34|White-Richards|75655 Mia Isle Suite 746South Christopherview, DE 53477|Lake Mollymouth|Isle of Man|14|12|2|Yes
+35|Lopez LLC|703 Dunn Heights Suite 710Lake Eric, AL 72885|Davisville|Kyrgyz Republic|13|11|5|Yes
+36|Holland and Sons|467 Sanchez Plaza Apt. 639Port Chad, WY 54888|Sarahhaven|Ethiopia|12|10|4|Yes
+37|Campbell LLC|78755 Gibson Islands Apt. 396Port Kimberly, MD 98110|Thorntonfurt|Hungary|13|11|8|No
+38|Sparks, Pearson and Hernandez|Unit 2895 Box 1718DPO AA 02512|South Monica|Cape Verde|12|10|9|No
+39|Harrison LLC|158 Finley Road Suite 809East Crystalport, WA 12347|Goodville|Kenya|14|12|4|No
+40|Benson Inc|5562 Amanda PortEast Gregory, MS 81727|South Roberta|Cambodia|13|11|5|No
+41|Murray LLC|4821 Landry RadialDaniellechester, KS 60379|Jamesfurt|Timor-Leste|15|13|9|Yes
+42|Rodriguez-James|406 Smith Way Apt. 974New Laurie, SC 25421|Ericaberg|Nigeria|12|10|4|No
+43|Berger Ltd|95214 Burgess Extensions Apt. 285Mariaview, NJ 39185|Lindamouth|Belarus|15|13|1|No
+44|Webster and Sons|516 Joseph Crossing Suite 549Carsonstad, TX 31148|Johnsonside|Greece|13|11|5|No
+45|Walker, Brown and Colon|PSC 4612, Box 0047APO AE 13240|New Derek|Korea|13|11|10|No
+46|Santiago-Paul|USCGC MatthewsFPO AP 20754|Penafort|New Zealand|13|11|7|Yes
+47|Crosby-Ramirez|7351 Stephens RueBruceview, DE 60101|Lake Jasontown|Australia|12|10|9|Yes
+48|Sanchez-Martinez|393 Mark DriveWest Micheleberg, ND 33354|North Donna|Anguilla|13|11|4|No
+49|Smith and Sons|40268 Julie MountainsStricklandhaven, CT 59746|New Bradley|Slovenia|12|10|4|No

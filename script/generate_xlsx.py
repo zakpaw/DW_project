@@ -71,7 +71,7 @@ def agencyNetworkExcel(table: dict, fake: object, id: int)->dict:
     table["Emp Name"].append(fake.first_name())
     table["Emp Surname"].append(fake.last_name())
     table["Date of Birth"].append(fake.date_of_birth(minimum_age=18, maximum_age=65))
-    edu = ["Middle School", "Highschool", "Collage", "Master", "PhD"]
+    edu = ["Middle School", "High School", "Collage", "Master", "PhD"]
     table["Education"].append(random.choice(edu))
     date = fake.date_of_birth(maximum_age=20)
     table["Seniority"].append(date)

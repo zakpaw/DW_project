@@ -10,7 +10,7 @@ HOME_DIR = Path(os.getcwd()).parent
 
 
 class DB_entity(object):
-    LENGTH = 100
+    LENGTH = 1000
     T = 0
     def __init__(self, name:str, data:dict):
         self.name = name
@@ -63,14 +63,20 @@ def agencyExcel(table: dict, fake: object, id: int)->dict:
 
 
 def agencyNetworkExcel(table: dict, fake: object, id: int)->dict:
-    table["ID"].append(id)
+    table["agencyID"].append(id)
     table["employeeID"].append(id)
+    table["PESEL"].append(random.randint(10000000000, 99999999999))
     table["Emp Name"].append(fake.first_name())
     table["Emp Surname"].append(fake.last_name())
     table["Date of Birth"].append(fake.date_of_birth(minimum_age=18, maximum_age=65))
     edu = ["Middle School", "Highschool", "Collage", "Master", "PhD"]
     table["Education"].append(random.choice(edu))
-    table["Seniority"].append(fake.date_of_birth(maximum_age=20))
+    date = fake.date_of_birth(maximum_age=20)
+    table["Seniority"].append(date)
+    if random.random() < 0.1:
+        table["endWorkDate"].append(date + dt.timedelta(days=random.randint(30, 1000)))
+    else:
+        table["endWorkDate"].append(None)
     table["Trips Sold"].append(random.randint(0,200))
 
 
@@ -81,7 +87,7 @@ def main():
     
     tables = {'Agency_Excel': agencyExcel, 'Agency_Network_Excel': agencyNetworkExcel}
 
-    for period in range(1):
+    for period in range(2):
         for tab in tables.keys():
             fake_data = defaultdict(list)
             for id in range(DB_entity.LENGTH):

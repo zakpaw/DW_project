@@ -18,7 +18,7 @@ class DB_entity(object):
 
     def __str__(self):
         # bulk insert
-        file_name = "data_"+self.name+str(self.T)+".xlsx"
+        file_name = "data_"+self.name+str(self.T)+".csv"
         
         df = pd.DataFrame(self.data)
 
@@ -28,10 +28,12 @@ class DB_entity(object):
         header = "infer" if self.T == 0 else None
         
         endpath = os.path.join(HOME_DIR, "data", file_name)
-        df.to_excel(endpath, index=False, header=header)
+        df.to_csv(endpath, index=False, sep='|', mode=mode, header=header)
 
+        # write = f"BULK INSERT {self.name}\nFROM '{file_name}'\nWITH "
+        # params = "(FIRSTROW = 2);\n\n"
         write = f"BULK INSERT {self.name}\nFROM '{file_name}'\nWITH "
-        params = "(FIRSTROW = 2);\n\n"
+        params = "(FIRSTROW = 2,\nFIELDTERMINATOR = '|',\nROWTERMINATOR='0x0a');\n\n"
         return write + params
 
 

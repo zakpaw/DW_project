@@ -10,7 +10,7 @@ HOME_DIR = Path(os.getcwd()).parent
 
 
 class DB_entity(object):
-    LENGTH = 1000
+    LENGTH = 100
     T = 0
     def __init__(self, name:str, data:dict):
         self.name = name

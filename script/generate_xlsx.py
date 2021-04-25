@@ -32,7 +32,7 @@ class DB_entity(object):
 
         # write = f"BULK INSERT {self.name}\nFROM '{file_name}'\nWITH "
         # params = "(FIRSTROW = 2);\n\n"
-        write = f"BULK INSERT {self.name}\nFROM 'data/{file_name}'\nWITH "
+        write = f"BULK INSERT {self.name}\nFROM '/home/db/data/{file_name}'\nWITH "
         params = "(FIRSTROW = 2,\nFIELDTERMINATOR = '|',\nROWTERMINATOR='0x0a');\n\n"
         return write + params
 

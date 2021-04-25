@@ -32,7 +32,7 @@ class DB_entity(object):
         endpath = os.path.join(HOME_DIR,"db", "data", file_name)
         df.to_csv(endpath, index=False, sep='|', mode=mode, header=header)
 
-        write = f"BULK INSERT {self.name}\nFROM 'data/{file_name}'\nWITH "
+        write = f"BULK INSERT {self.name}\nFROM '/home/db/data/{file_name}'\nWITH "
         params = "(FIRSTROW = 2,\nFIELDTERMINATOR = '|',\nROWTERMINATOR='0x0a');\n\n"
         return write + params
 

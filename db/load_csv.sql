@@ -1,167 +1,167 @@
 BULK INSERT Hotel
-FROM 'data_Hotel0.csv'
+FROM 'data/data_Hotel0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Airport
-FROM 'data_Airport0.csv'
+FROM 'data/data_Airport0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT AirportNearHotel
-FROM 'data_AirportNearHotel0.csv'
+FROM 'data/data_AirportNearHotel0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT HotelOffer
-FROM 'data_HotelOffer0.csv'
+FROM 'data/data_HotelOffer0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Flight
-FROM 'data_Flight0.csv'
+FROM 'data/data_Flight0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Ariline
-FROM 'data_Ariline0.csv'
+FROM 'data/data_Ariline0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT TravelAgency
-FROM 'data_TravelAgency0.csv'
+FROM 'data/data_TravelAgency0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT TravelBetween
-FROM 'data_TravelBetween0.csv'
+FROM 'data/data_TravelBetween0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT ParadiseOffer
-FROM 'data_ParadiseOffer0.csv'
+FROM 'data/data_ParadiseOffer0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Employee
-FROM 'data_Employee0.csv'
+FROM 'data/data_Employee0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Client
-FROM 'data_Client0.csv'
+FROM 'data/data_Client0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT ClientOffer
-FROM 'data_ClientOffer0.csv'
+FROM 'data/data_ClientOffer0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Payment
-FROM 'data_Payment0.csv'
+FROM 'data/data_Payment0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Opinion
-FROM 'data_Opinion0.csv'
+FROM 'data/data_Opinion0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Hotel
-FROM 'data_Hotel1.csv'
+FROM 'data/data_Hotel1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Airport
-FROM 'data_Airport1.csv'
+FROM 'data/data_Airport1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT AirportNearHotel
-FROM 'data_AirportNearHotel1.csv'
+FROM 'data/data_AirportNearHotel1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT HotelOffer
-FROM 'data_HotelOffer1.csv'
+FROM 'data/data_HotelOffer1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Flight
-FROM 'data_Flight1.csv'
+FROM 'data/data_Flight1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Ariline
-FROM 'data_Ariline1.csv'
+FROM 'data/data_Ariline1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT TravelAgency
-FROM 'data_TravelAgency1.csv'
+FROM 'data/data_TravelAgency1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT TravelBetween
-FROM 'data_TravelBetween1.csv'
+FROM 'data/data_TravelBetween1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT ParadiseOffer
-FROM 'data_ParadiseOffer1.csv'
+FROM 'data/data_ParadiseOffer1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Employee
-FROM 'data_Employee1.csv'
+FROM 'data/data_Employee1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Client
-FROM 'data_Client1.csv'
+FROM 'data/data_Client1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT ClientOffer
-FROM 'data_ClientOffer1.csv'
+FROM 'data/data_ClientOffer1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Payment
-FROM 'data_Payment1.csv'
+FROM 'data/data_Payment1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');
 
 BULK INSERT Opinion
-FROM 'data_Opinion1.csv'
+FROM 'data/data_Opinion1.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='0x0a');

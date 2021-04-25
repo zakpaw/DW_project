@@ -1,3 +1,5 @@
+USE Agency_DW
+
 INSERT INTO TravelAgency
 VALUES (1, 'sample name', 'gdansk', 'poland');
 

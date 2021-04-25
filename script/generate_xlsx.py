@@ -27,12 +27,12 @@ class DB_entity(object):
         mode = "w" if self.T == 0 else "a"
         header = "infer" if self.T == 0 else None
         
-        endpath = os.path.join(HOME_DIR, "data", file_name)
+        endpath = os.path.join(HOME_DIR, "db", "data", file_name)
         df.to_csv(endpath, index=False, sep='|', mode=mode, header=header)
 
         # write = f"BULK INSERT {self.name}\nFROM '{file_name}'\nWITH "
         # params = "(FIRSTROW = 2);\n\n"
-        write = f"BULK INSERT {self.name}\nFROM '{file_name}'\nWITH "
+        write = f"BULK INSERT {self.name}\nFROM 'data/{file_name}'\nWITH "
         params = "(FIRSTROW = 2,\nFIELDTERMINATOR = '|',\nROWTERMINATOR='0x0a');\n\n"
         return write + params
 

@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+    db:
+        container_name: DW
+        hostname: localhost
+        build: .
+        image: dw:1.0
+        ports:
+            - 1433:1433
+        command:
+            - /bin/bash
+            - -c 
+            - |
+              /opt/mssql/bin/sqlservr & sleep 10
+              ./script/create_load.sh
+              sleep infinity

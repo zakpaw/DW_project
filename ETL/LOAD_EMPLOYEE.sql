@@ -32,7 +32,7 @@ go
 CREATE VIEW ETLEmployeeData
 AS
 SELECT 
-	t3.[agency_ID],
+	t3.[agency_ID], --use this to load cos tam cos tam
 	t1.[PESEL],
 	[NameAndSurname] = Cast([empName] + ' ' + [empSurname] as nvarchar(128)),
 	CASE

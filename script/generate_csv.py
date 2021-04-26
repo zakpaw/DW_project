@@ -10,7 +10,7 @@ HOME_DIR = Path(os.getcwd()).parent
 
 
 class DB_entity(object):
-    LENGTH = 100
+    LENGTH = 1000
     T = 0
     def __init__(self, name:str, data:dict):
         self.name = name
@@ -30,10 +30,10 @@ class DB_entity(object):
         header = "infer" if self.T == 0 else None
         
         endpath = os.path.join(HOME_DIR, "db", "data", file_name)
-        df.to_csv(endpath, index=False, sep='|', mode=mode, header=header)
+        df.to_csv(endpath, index=False, sep='|', mode=mode, header=header, line_terminator='<>')
 
         write = f"BULK INSERT {self.name}\nFROM '/home/db/data/{file_name}'\nWITH "
-        params = "(FIRSTROW = 2,\nFIELDTERMINATOR = '|',\nROWTERMINATOR='0x0A');\n\n"
+        params = "(FIRSTROW = 2,\nFIELDTERMINATOR = '|',\nROWTERMINATOR='<>');\n\n"
         return write + params
 
 
@@ -177,36 +177,39 @@ def main():
     Faker.seed(42)
     
     tables = {'Hotel': hotel, 'Airport': airport, 'AirportNearHotel': airportNearHotel,
-              'HotelOffer': hotelOffer, 'Flight': flight, 'Ariline': airline,
+              'HotelOffer': hotelOffer, 'Flight': flight, 'Airline': airline,
               'TravelAgency': travelAgency, 'TravelBetween': travelBetween,
               'ParadiseOffer': paradiseOffer, 'Employee': employee, 'Client': client,
               'ClientOffer': clientOffer, 'Payment': payment, 'Opinion': opinion}
     
     lens = {'Hotel': DB_entity.LENGTH, 'Airport': DB_entity.LENGTH, 'AirportNearHotel': DB_entity.LENGTH,
-              'HotelOffer': DB_entity.LENGTH, 'Flight': DB_entity.LENGTH, 'Ariline': DB_entity.LENGTH,
+              'HotelOffer': DB_entity.LENGTH, 'Flight': DB_entity.LENGTH, 'Airline': DB_entity.LENGTH,
               'TravelAgency': DB_entity.LENGTH, 'TravelBetween': DB_entity.LENGTH,
               'ParadiseOffer': DB_entity.LENGTH, 'Employee': DB_entity.LENGTH, 'Client': DB_entity.LENGTH,
               'ClientOffer': DB_entity.LENGTH, 'Payment': DB_entity.LENGTH, 'Opinion': DB_entity.LENGTH}
     
-    for period in range(2):
+    for period in range(1):
         for tab in tables.keys():
             fake_data = defaultdict(list)
             for id in range(int(lens[tab]/2)):
                 tables[tab](fake_data, fake, id + DB_entity.LENGTH * period)
                 
+            path = os.path.join(HOME_DIR, "db", "load_csv.sql")
+
             if (tab == next(iter(tables))) and (period == 0):
-                mode = "w"
+                f = open(path, "w")
+                f.write("USE AgencyData;\n\n")
+                f.close()
+                mode = "a"
             else:
                 mode = "a"
 
-            path = os.path.join(HOME_DIR, "db", "load_csv.sql")
             f = open(path, mode)
             entity = DB_entity(tab, fake_data)
             if period == 1:
                 entity.nextT()
             f.write(str(entity))
             f.close()
-
 
 #     🌴🌴 🥥🐒 🌴🌴
 if __name__ == "__main__":

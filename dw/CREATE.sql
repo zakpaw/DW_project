@@ -1,5 +1,4 @@
 -- DIMENTIONS --
-CREATE DATABASE Agency_DW
 USE Agency_DW
 
 CREATE TABLE TravelAgency(

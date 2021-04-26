@@ -13,4 +13,4 @@ COPY . /home
 
 WORKDIR /home
 
-# RUN ./script/wait-for-it.sh
+CMD ["./script/create_load.sh"]

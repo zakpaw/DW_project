@@ -1,115 +1,124 @@
-CREATE DATABASE AgencyData;
-USE AgencyData
+USE AgencyData;
 
 CREATE TABLE TravelAgency(
-	agency_ID VARCHAR(5) PRIMARY KEY,
-	agency_name VARCHAR(30),
-	city VARCHAR(30),
-	country VARCHAR(30)
+	agency_ID INT PRIMARY KEY,
+	agency_name VARCHAR(150),
+	city VARCHAR(150),
+	country VARCHAR(150)
 );
+
 CREATE TABLE Employee(
-	ID VARCHAR(5) PRIMARY KEY,
+	ID INT PRIMARY KEY,
 	name VARCHAR(15),
 	surname VARCHAR(15),
-	agency_ID VARCHAR(5) REFERENCES TravelAgency
+	agency_ID INT REFERENCES TravelAgency
 );
+
 CREATE TABLE Client(
-	PESEL VARCHAR(11) PRIMARY KEY,
-	name VARCHAR(15),
-	surname VARCHAR(30),
-	email VARCHAR(30),
+	client_ID INT PRIMARY KEY,
+	name VARCHAR(150),
+	surname VARCHAR(150),
+	email VARCHAR(150),
 	telephone_number INT
 	);
 
 CREATE TABLE Hotel(
-	hotel_ID varchar(5) PRIMARY KEY,
-	name VARCHAR(30),
-	address VARCHAR(15),
-	city VARCHAR(30),
-	country VARCHAR(30),
-	starting_hour TIME,
-	ending_hour TIME,
+	hotel_ID INT PRIMARY KEY,
+	name VARCHAR(150),
+	address VARCHAR(150),
+	city VARCHAR(150),
+	country VARCHAR(150),
+	starting_hour INT,
+	ending_hour INT,
 	opinion INT,
-	is_befriended VARCHAR(3)
-	);
+	is_befriended VARCHAR(4)
+);
 
 CREATE TABLE HotelOffer(
-	offer_ID VARCHAR(5) PRIMARY KEY,
+	offer_ID INT PRIMARY KEY,
 	start_date DATE,
 	end_date DATE,
 	price FLOAT,
 	capacity INT,
 	discount FLOAT,
-	type_of_board VARCHAR(30),
-	hotel_ID VARCHAR(5) REFERENCES Hotel
+	hotel_ID INT REFERENCES Hotel
 );
+
 CREATE TABLE ParadiseOffer(
-	offer_ID VARCHAR(5) PRIMARY KEY,
+	offer_ID INT PRIMARY KEY,
 	costs FLOAT,
 	OTW FLOAT,
 	creation_date DATE,
-	employee_ID VARCHAR(5) REFERENCES Employee,
-	hotel_offer_ID VARCHAR(5) REFERENCES HotelOffer
+	employee_ID INT REFERENCES Employee,
+	hotel_offer_ID INT REFERENCES HotelOffer
 );
+
 CREATE TABLE Payment(
-	transaction_no VARCHAR(12) PRIMARY KEY,
+	transaction_no INT PRIMARY KEY,
 	amount FLOAT,
 	payment_date DATE,
-	payment_method VARCHAR(20),
-	offer_ID VARCHAR(5) REFERENCES ParadiseOffer,
-	client_PESEL VARCHAR(11) REFERENCES Client
+	payment_method VARCHAR(50),
+	offer_ID INT REFERENCES ParadiseOffer,
+	client_PESEL INT REFERENCES Client
 );
+
 CREATE TABLE Opinion(
-	opinion_ID VARCHAR(5) PRIMARY KEY,
+	opinion_ID INT PRIMARY KEY,
 	overall_reat INT,
 	location INT,
 	food INT,
 	hotel INT,
 	time_management INT,
 	travelAgent INT,
-	client_PESEL VARCHAR(11) REFERENCES Client,
-	offer_ID VARCHAR(5) REFERENCES ParadiseOffer
-	);
+	client_PESEL INT REFERENCES Client,
+	offer_ID INT REFERENCES ParadiseOffer
+);
 
 CREATE TABLE Airline(
-	ID VARCHAR(5) PRIMARY KEY,
-	name VARCHAR(30),
-	email VARCHAR(30),
+	ID INT PRIMARY KEY,
+	name VARCHAR(150),
+	email VARCHAR(150),
 	telephone_number INT,
 	discount FLOAT,
-	);
+);
 
 CREATE TABLE Flight(
-	flight_NO VARCHAR(5) PRIMARY KEY,
-	airplane VARCHAR(20),
+	flight_NO INT PRIMARY KEY,
+	airplane VARCHAR(150),
 	cost FLOAT,
 	date DATE,
-	arrival_time TIME,
-	departure_time TIME,
-	destination VARCHAR(30),
-	continent VARCHAR(30),
-	airline_ID VARCHAR(5) REFERENCES Airline
+	arrival_time INT,
+	departure_time INT,
+	destination VARCHAR(150),
+	continent VARCHAR(150),
+	airline_ID INT REFERENCES Airline,
+	paradise_offer_id INT REFERENCES ParadiseOffer
+
 );
+
 CREATE TABLE Airport (
-	airport_ID VARCHAR(5) PRIMARY KEY,
-	airport_name VARCHAR(30),
-	city VARCHAR(30),
-	country VARCHAR(30),
+	airport_ID INT PRIMARY KEY,
+	airport_name VARCHAR(150),
+	city VARCHAR(150),
+	country VARCHAR(150),
 );
+
 CREATE TABLE TravelBetween(
-	airport_ID VARCHAR(5) REFERENCES Airport,
-	flight_NO VARCHAR(5) REFERENCES Flight,
+	airport_ID INT REFERENCES Airport,
+	flight_NO INT REFERENCES Flight,
 	PRIMARY KEY(airport_ID, flight_NO)
 );
+
 CREATE TABLE ClientOffer(
-	client_PESEL VARCHAR(11) REFERENCES Client,
-	offer_ID VARCHAR(5) REFERENCES ParadiseOffer,
+	client_PESEL INT REFERENCES Client,
+	offer_ID INT REFERENCES ParadiseOffer,
 	PRIMARY KEY(client_PESEL, offer_ID)
 );
+
 CREATE TABLE AirportNearHotel(
-	hotel_ID VARCHAR(5) REFERENCES Hotel,
-	airport_ID VARCHAR(5) REFERENCES Airport,
+	hotel_ID INT REFERENCES Hotel,
+	airport_ID INT REFERENCES Airport,
 	distance INT,
-	travel_time TIME,
+	travel_time FLOAT,
 	PRIMARY KEY(hotel_ID, airport_ID)
 );

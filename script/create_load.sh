@@ -11,6 +11,8 @@ createAndLoad() {
     sqlcmd -S 127.0.0.1 -U sa -P ${SA_PASSWORD} -i /home/dw/CREATE.sql
     echo "Loading data to AgencyData"
     sqlcmd -S 127.0.0.1 -U sa -P ${SA_PASSWORD} -i /home/db/load_csv.sql
+    echo "Running ETL employee"
+    sqlcmd -S 127.0.0.1 -U sa -P ${SA_PASSWORD} -i /home/ETL/LOAD_EMPLOYEE.sql
 }
 
 createAndLoad || (sleep 5 && createAndLoad)

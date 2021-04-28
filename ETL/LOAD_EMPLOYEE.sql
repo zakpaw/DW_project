@@ -6,10 +6,10 @@ CREATE TABLE dbo.AgencyTemp(agencyID varchar(300), agencyName varchar(300), Agen
 go
 
 BULK INSERT dbo.AgencyTemp
-FROM 'C:\Users\Weronika\Desktop\DW\DW\data_Agency_Excel0.csv'
+FROM '/home/db/data/data_Agency_Excel0.csv'
 WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
-ROWTERMINATOR='0x0a');
+ROWTERMINATOR='<>');
 
 
 --SELECT * FROM dbo.BookstoresTemp;
@@ -22,10 +22,10 @@ CREATE TABLE dbo.EmployeesTemp(agencyID VARCHAR(255) , employeeID VARCHAR(255), 
 go
 
 BULK INSERT dbo.EmployeesTemp
-    FROM 'C:\Users\Weronika\Desktop\DW\DW\data_Agency_Network_Excel0.csv'
+    FROM '/home/db/data/data_Agency_Network_Excel0.csv'
  WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
-ROWTERMINATOR='0x0a');
+ROWTERMINATOR='<>');
 
 If (object_id('ETLEmployeeData') is not null) Drop View ETLEmployeeData;
 go

@@ -1,57 +1,5 @@
-from faker import Faker # 👾
-from collections import defaultdict
-from pathlib import Path
-import pandas as pd
 import random
 import datetime as dt
-import os
-
-HOME_DIR = Path(os.getcwd()).parent
-
-
-class DB_entity(object):
-    LENGTH = 1000
-    T = 0
-    def __init__(self, name:str, data:dict):
-        self.name = name
-        self.data = data
-
-    def __str__(self):
-        # bulk insert
-        file_name = "data_"+self.name+str(self.T)+".csv"
-        
-        df = pd.DataFrame(self.data)
-
-        strCols = df.select_dtypes('object').columns
-        fun = lambda x: x.str.replace('\n', '')
-        df[strCols] = df[strCols].apply(fun, axis=0)
-
-        mode = "w" if self.T == 0 else "a"
-        header = "infer" if self.T == 0 else None
-        
-        endpath = os.path.join(HOME_DIR, "db", "data", file_name)
-        df.to_csv(endpath, index=False, sep='|', mode=mode, header=header, line_terminator='<>')
-
-        write = f"BULK INSERT {self.name}\nFROM '/home/db/data/{file_name}'\nWITH "
-        params = "(FIRSTROW = 2,\nFIELDTERMINATOR = '|',\nROWTERMINATOR='<>');\n\n"
-        return write + params
-
-
-    def insert(self)->str:
-        write = f"INSERT INTO {self.name} ({' '.join([*self.data.keys()])})\nVALUES\n"
-        for i in range(self.LENGTH):
-            write += "\t("
-            for k in self.data.keys():
-                write += str(self.data[k][i]) + ", "
-
-            end = "),\n" if i != self.LENGTH-1 else ");"
-            write = write[:-2] + end
-        return write
-    
-    def nextT(self):
-        self.T = 1
-
-
 
 def hotel(table: dict, fake: object, id: int)->dict:
     table["hotel_ID"].append(id)
@@ -90,7 +38,7 @@ def hotelOffer(table: dict, fake: object, id: int)->dict:
     table["discount"].append("{:.2f}".format(random.random()))
     table["hotel_ID"].append(id)
 
-def flight(table: dict, fake: object, id: int)->dict:
+def flight(table: dict, fake: object, id: int, offerID: int)->dict:
     table["flight_NO"].append(id)
     table["airplane"].append(fake.license_plate())
     table["cost"].append(random.randrange(200,800))
@@ -104,7 +52,7 @@ def flight(table: dict, fake: object, id: int)->dict:
                   'Asia', 'Africa', 'Australia']
     table["continent"].append(random.choice(continents))
     table["airline_ID"].append(id)
-    table["paradise_offer_ID"].append(id)
+    table["paradise_offer_ID"].append(offerID)
 
 def travelBetween(table: dict, fake: object, id: int)->dict:
     table["airport_ID"].append(id)
@@ -116,19 +64,6 @@ def airline(table: dict, fake: object, id: int)->dict:
     table["email"].append(fake.email())
     table["telephone_number"].append(fake.msisdn()[:-4])
     table["discount"].append("{:.2f}".format(random.random()))
-
-def travelAgency(table: dict, fake: object, id: int)->dict:
-    table["agency_ID"].append(id)
-    city = fake.city()
-    table["agency_name"].append(city + 'Paradise Agency')
-    table["city"].append(city)
-    table["country"].append(fake.country())
-
-def employee(table: dict, fake: object, id: int)->dict:
-    table["ID"].append(id)
-    table["name"].append(fake.first_name())
-    table["surname"].append(fake.last_name())
-    table["agency_ID"].append(id)
 
 def paradiseOffer(table: dict, fake: object, id: int)->dict:
     table["offer_ID"].append(id)
@@ -170,47 +105,43 @@ def opinion(table: dict, fake: object, id: int)->dict:
     table["client_ID"].append(id)
     table["offer_ID"].append(id)
 
+def employee(table: dict, fake: object, id: int)->dict:
+    table["ID"].append(id)
+    table["name"].append(fake.first_name())
+    table["surname"].append(fake.last_name())
+    table["agency_ID"].append(id)
 
+def travelAgency(table: dict, fake: object, id: int)->dict:
+    table["agency_ID"].append(id)
+    city = fake.city()
+    table["agency_name"].append(city + 'Paradise Agency')
+    table["city"].append(city)
+    table["country"].append(fake.country())
 
-def main():
-    fake = Faker()
-    Faker.seed(42)
-    
-    tables = {'Hotel': hotel, 'Airport': airport, 'AirportNearHotel': airportNearHotel,
-              'HotelOffer': hotelOffer, 'Flight': flight, 'Airline': airline,
-              'TravelAgency': travelAgency, 'TravelBetween': travelBetween,
-              'ParadiseOffer': paradiseOffer, 'Employee': employee, 'Client': client,
-              'ClientOffer': clientOffer, 'Payment': payment, 'Opinion': opinion}
-    
-    lens = {'Hotel': DB_entity.LENGTH, 'Airport': DB_entity.LENGTH, 'AirportNearHotel': DB_entity.LENGTH,
-              'HotelOffer': DB_entity.LENGTH, 'Flight': DB_entity.LENGTH, 'Airline': DB_entity.LENGTH,
-              'TravelAgency': DB_entity.LENGTH, 'TravelBetween': DB_entity.LENGTH,
-              'ParadiseOffer': DB_entity.LENGTH, 'Employee': DB_entity.LENGTH, 'Client': DB_entity.LENGTH,
-              'ClientOffer': DB_entity.LENGTH, 'Payment': DB_entity.LENGTH, 'Opinion': DB_entity.LENGTH}
-    
-    for period in range(1):
-        for tab in tables.keys():
-            fake_data = defaultdict(list)
-            for id in range(int(lens[tab]/2)):
-                tables[tab](fake_data, fake, id + DB_entity.LENGTH * period)
-                
-            path = os.path.join(HOME_DIR, "db", "load_csv.sql")
+# Excels
+def agencyExcel(table: dict, fake: object, id: int)->dict:
+    table["ID"].append(id)
+    city = fake.city()
+    table["Name"].append(city + 'Paradise Agency')
+    table["Adress"].append(str(fake.address()))
+    table["Postal Code"].append(str(random.randint(10,99))+'-'+str(random.randint(100,999)))
+    table["City"].append(city)
+    table["Telephone Number"].append(fake.msisdn()[:-4])
+    table["e-mail"].append(fake.email())
 
-            if (tab == next(iter(tables))) and (period == 0):
-                f = open(path, "w")
-                f.write("USE AgencyData;\n\n")
-                f.close()
-                mode = "a"
-            else:
-                mode = "a"
-
-            f = open(path, mode)
-            entity = DB_entity(tab, fake_data)
-            if period == 1:
-                entity.nextT()
-            f.write(str(entity))
-            f.close()
-
-#     🌴🌴 🥥🐒 🌴🌴
-if __name__ == "__main__":
-    main()
+def agencyNetworkExcel(table: dict, fake: object, id: int)->dict:
+    table["agencyID"].append(id)
+    table["employeeID"].append(id)
+    table["PESEL"].append(random.randint(10000000000, 99999999999))
+    table["Emp Name"].append(fake.first_name())
+    table["Emp Surname"].append(fake.last_name())
+    table["Date of Birth"].append(fake.date_of_birth(minimum_age=18, maximum_age=65))
+    edu = ["Middle school", "High School", "College", "Master", "PhD"]
+    table["Education"].append(random.choice(edu))
+    date = fake.date_of_birth(maximum_age=20)
+    table["Seniority"].append(date)
+    if random.random() < 0.1:
+        table["endWorkDate"].append(date + dt.timedelta(days=random.randint(30, 1000)))
+    else:
+        table["endWorkDate"].append(None)
+    table["Trips Sold"].append(random.randint(0,200))

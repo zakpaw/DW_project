@@ -1,6 +1,7 @@
 from faker import Faker # 👾
 from collections import defaultdict
 from pathlib import Path
+from tables import *
 import pandas as pd
 import random
 import datetime as dt
@@ -21,8 +22,10 @@ class DB_entity(object):
         file_name = "data_"+self.name+str(self.T)+".csv"
         
         df = pd.DataFrame(self.data)
-
-        strCols = df.select_dtypes('object').columns
+        if self.name not in ['Agency_Network_Excel']:
+            strCols = df.select_dtypes('object').columns
+            fun = lambda x: x.str.replace('\n', '')
+            df[strCols] = df[strCols].apply(fun, axis=0)
 
         mode = "w" if self.T == 0 else "a"
         header = "infer" if self.T == 0 else None
@@ -30,8 +33,6 @@ class DB_entity(object):
         endpath = os.path.join(HOME_DIR, "db", "data", file_name)
         df.to_csv(endpath, index=False, sep='|', mode=mode, header=header, line_terminator='<>')
 
-        # write = f"BULK INSERT {self.name}\nFROM '{file_name}'\nWITH "
-        # params = "(FIRSTROW = 2);\n\n"
         write = f"BULK INSERT {self.name}\nFROM '/home/db/data/{file_name}'\nWITH "
         params = "(FIRSTROW = 2,\nFIELDTERMINATOR = '|',\nROWTERMINATOR='<>');\n\n"
         return write + params
@@ -52,62 +53,50 @@ class DB_entity(object):
         self.T = 1
 
 
-
-def agencyExcel(table: dict, fake: object, id: int)->dict:
-    table["ID"].append(id)
-    city = fake.city()
-    table["Name"].append(city + 'Paradise Agency')
-    table["Adress"].append(str(fake.address()))
-    table["Postal Code"].append(str(random.randint(10,99))+'-'+str(random.randint(100,999)))
-    table["City"].append(city)
-    table["Telephone Number"].append(fake.msisdn()[:-4])
-    table["e-mail"].append(fake.email())
-
-
-def agencyNetworkExcel(table: dict, fake: object, id: int)->dict:
-    table["agencyID"].append(id)
-    table["employeeID"].append(id)
-    table["PESEL"].append(random.randint(10000000000, 99999999999))
-    table["Emp Name"].append(fake.first_name())
-    table["Emp Surname"].append(fake.last_name())
-    table["Date of Birth"].append(fake.date_of_birth(minimum_age=18, maximum_age=65))
-    edu = ["Middle school", "High School", "College", "Master", "PhD"]
-    table["Education"].append(random.choice(edu))
-    date = fake.date_of_birth(maximum_age=20)
-    table["Seniority"].append(date)
-    if random.random() < 0.1:
-        table["endWorkDate"].append(date + dt.timedelta(days=random.randint(30, 1000)))
-    else:
-        table["endWorkDate"].append(None)
-    table["Trips Sold"].append(random.randint(0,200))
-
-
-
 def main():
     fake = Faker()
     Faker.seed(42)
     
-    tables = {'Agency_Excel': agencyExcel, 'Agency_Network_Excel': agencyNetworkExcel}
-
+    tables = {'Hotel': hotel, 'Airport': airport, 'AirportNearHotel': airportNearHotel,
+              'HotelOffer': hotelOffer, 'Flight': flight, 'Airline': airline,
+              'TravelAgency': travelAgency, 'TravelBetween': travelBetween,
+              'ParadiseOffer': paradiseOffer, 'Employee': employee, 'Client': client,
+              'ClientOffer': clientOffer, 'Payment': payment, 'Opinion': opinion,
+              'Agency_Excel': agencyExcel, 'Agency_Network_Excel': agencyNetworkExcel}
+    
+    lens = {'Hotel': DB_entity.LENGTH, 'Airport': DB_entity.LENGTH, 'AirportNearHotel': DB_entity.LENGTH,
+              'HotelOffer': DB_entity.LENGTH, 'Flight': DB_entity.LENGTH*2, 'Airline': DB_entity.LENGTH,
+              'TravelAgency': DB_entity.LENGTH, 'TravelBetween': DB_entity.LENGTH,
+              'ParadiseOffer': DB_entity.LENGTH, 'Employee': DB_entity.LENGTH, 'Client': DB_entity.LENGTH,
+              'ClientOffer': DB_entity.LENGTH, 'Payment': DB_entity.LENGTH, 'Opinion': DB_entity.LENGTH,
+              'Agency_Excel': DB_entity.LENGTH, 'Agency_Network_Excel': DB_entity.LENGTH}
+    
     for period in range(2):
         for tab in tables.keys():
             fake_data = defaultdict(list)
-            for id in range(DB_entity.LENGTH):
-                tables[tab](fake_data, fake, id + DB_entity.LENGTH * period)
+            for id in range(int(lens[tab]/2)):
+                if tab == 'Flight':
+                    offerID = id - 1 if id % 2 == 1 else id
+                    tables[tab](fake_data, fake, id + DB_entity.LENGTH * period, offerID)
+                else:
+                    tables[tab](fake_data, fake, id + DB_entity.LENGTH * period)
                 
+            path = os.path.join(HOME_DIR, "db", "load_csv.sql")
+
             if (tab == next(iter(tables))) and (period == 0):
-                mode = "w"
+                f = open(path, "w")
+                f.write("USE AgencyData;\n\n")
+                f.close()
+                mode = "a"
             else:
                 mode = "a"
-            
-            path = os.path.join(HOME_DIR, "db", "load_xlsx.sql")
+
             f = open(path, mode)
             entity = DB_entity(tab, fake_data)
             if period == 1:
                 entity.nextT()
             f.write(str(entity))
             f.close()
-
 
 #     🌴🌴 🥥🐒 🌴🌴
 if __name__ == "__main__":

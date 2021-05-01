@@ -1,4 +1,4 @@
-from faker import Faker # 👾
+from faker import Faker
 from collections import defaultdict
 from pathlib import Path
 from tables import *
@@ -7,6 +7,7 @@ import random
 import datetime as dt
 import os
 
+fake = Faker()
 HOME_DIR = Path(os.getcwd()).parent
 
 
@@ -52,9 +53,50 @@ class DB_entity(object):
     def nextT(self):
         self.T = 1
 
+cities = [fake.city() for _ in range(DB_entity.LENGTH*2)]
+names = [fake.first_name() for _ in range(DB_entity.LENGTH*2)]
+surnames = [fake.last_name() for _ in range(DB_entity.LENGTH*2)]
+
+def employee(table: dict, fake: object, id: int)->dict:
+    table["ID"].append(id)
+    table["name"].append(names[id])
+    table["surname"].append(surnames[id])
+    table["agency_ID"].append(id)
+
+def travelAgency(table: dict, fake: object, id: int)->dict:
+    table["agency_ID"].append(id)
+    table["agency_name"].append(cities[id] + 'Paradise Agency')
+    table["city"].append(cities[id])
+    table["country"].append(fake.country())
+
+# Excels
+def agencyExcel(table: dict, fake: object, id: int)->dict:
+    table["ID"].append(id)
+    table["Name"].append(cities[id] + 'Paradise Agency')
+    table["Adress"].append(str(fake.address()))
+    table["Postal Code"].append(str(random.randint(10,99))+'-'+str(random.randint(100,999)))
+    table["City"].append(cities[id])
+    table["Telephone Number"].append(fake.msisdn()[:-4])
+    table["e-mail"].append(fake.email())
+
+def agencyNetworkExcel(table: dict, fake: object, id: int)->dict:
+    table["agencyID"].append(id)
+    table["employeeID"].append(id)
+    table["PESEL"].append(random.randint(10000000000, 99999999999))
+    table["Emp Name"].append(names[id])
+    table["Emp Surname"].append(surnames[id])
+    table["Date of Birth"].append(fake.date_of_birth(minimum_age=18, maximum_age=65))
+    edu = ["Middle school", "High School", "College", "Master", "PhD"]
+    table["Education"].append(random.choice(edu))
+    date = fake.date_of_birth(maximum_age=20)
+    table["Seniority"].append(date)
+    if random.random() < 0.1:
+        table["endWorkDate"].append(date + dt.timedelta(days=random.randint(30, 1000)))
+    else:
+        table["endWorkDate"].append(None)
+    table["Trips Sold"].append(random.randint(0,200))
 
 def main():
-    fake = Faker()
     Faker.seed(42)
     
     tables = {'Hotel': hotel, 'Airport': airport, 'AirportNearHotel': airportNearHotel,
@@ -76,7 +118,7 @@ def main():
             fake_data = defaultdict(list)
             for id in range(int(lens[tab]/2)):
                 if tab == 'Flight':
-                    offerID = id - 1 if id % 2 == 1 else id
+                    offerID = id % int(DB_entity.LENGTH / 2)
                     tables[tab](fake_data, fake, id + DB_entity.LENGTH * period, offerID)
                 else:
                     tables[tab](fake_data, fake, id + DB_entity.LENGTH * period)

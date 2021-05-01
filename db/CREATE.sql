@@ -49,6 +49,7 @@ CREATE TABLE ParadiseOffer(
 	costs FLOAT,
 	OTW FLOAT,
 	creation_date DATE,
+	creation_time INT,
 	employee_ID INT REFERENCES Employee,
 	hotel_offer_ID INT REFERENCES HotelOffer
 );

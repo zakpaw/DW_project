@@ -70,6 +70,7 @@ def paradiseOffer(table: dict, fake: object, id: int)->dict:
     table["costs"].append(random.randrange(800,10000))
     table["OTW"].append(random.randrange(0,10))
     table["creation_date"].append(fake.date_time())
+    table["creation_time"].append(random.randrange(7,19))
     table["employee_ID"].append(id)
     table["hotel_offer_ID"].append(id)
 

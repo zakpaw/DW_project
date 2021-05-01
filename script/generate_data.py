@@ -23,7 +23,7 @@ class DB_entity(object):
         file_name = "data_"+self.name+str(self.T)+".csv"
         
         df = pd.DataFrame(self.data)
-        if self.name not in ['Agency_Network_Excel']:
+        if self.name != 'Agency_Network_Excel':
             strCols = df.select_dtypes('object').columns
             fun = lambda x: x.str.replace('\n', '')
             df[strCols] = df[strCols].apply(fun, axis=0)
@@ -33,10 +33,12 @@ class DB_entity(object):
         
         endpath = os.path.join(HOME_DIR, "db", "data", file_name)
         df.to_csv(endpath, index=False, sep='|', mode=mode, header=header, line_terminator='<>')
-
-        write = f"BULK INSERT {self.name}\nFROM '/home/db/data/{file_name}'\nWITH "
-        params = "(FIRSTROW = 2,\nFIELDTERMINATOR = '|',\nROWTERMINATOR='<>');\n\n"
-        return write + params
+        if self.name not in ['Agency_Network_Excel', 'Agency_Excel']:
+            write = f"BULK INSERT {self.name}\nFROM '/home/db/data/{file_name}'\nWITH "
+            params = "(FIRSTROW = 2,\nFIELDTERMINATOR = '|',\nROWTERMINATOR='<>');\n\n"
+            return write + params
+        else:
+            return ''
 
 
     def insert(self)->str:

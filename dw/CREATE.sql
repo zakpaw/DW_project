@@ -1,6 +1,6 @@
--- DIMENTIONS --
-USE Agency_DW
+USE Agency_DW;
 
+-- DIMENTIONS --
 CREATE TABLE TravelAgency(
 	agency_ID INT PRIMARY KEY,
 	agency_name VARCHAR(100),

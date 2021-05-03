@@ -115,5 +115,5 @@ DROP TABLE dbo.AgencyTemp;
 DROP TABLE dbo.EmployeesTemp;
 Drop View ETLEmployeeData; 
 
-SELECT * FROM Employee
+-- SELECT * FROM Employee
 

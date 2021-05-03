@@ -13,4 +13,4 @@ COPY . /home
 
 WORKDIR /home
 
-CMD ["./script/create_load.sh"]
+CMD ["./scripts/create_load.sh"]

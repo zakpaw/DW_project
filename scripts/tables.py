@@ -1,4 +1,5 @@
 import random
+import string
 import datetime as dt
 
 def hotel(table: dict, fake: object, id: int)->dict:
@@ -60,7 +61,8 @@ def travelBetween(table: dict, fake: object, id: int)->dict:
 
 def airline(table: dict, fake: object, id: int)->dict:
     table["ID"].append(id)
-    table["name"].append(fake.company_suffix())
+    name = [random.choice(string.ascii_letters) for _ in range(4)]
+    table["name"].append("".join(n for n in name)+str(id))
     table["email"].append(fake.email())
     table["telephone_number"].append(fake.msisdn()[:-4])
     table["discount"].append("{:.2f}".format(random.random()))

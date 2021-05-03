@@ -1,21 +1,21 @@
 USE AgencyData;
 
 CREATE TABLE TravelAgency(
-	agency_ID INT PRIMARY KEY,
+	agency_ID INT IDENTITY(1,1) PRIMARY KEY,
 	agency_name VARCHAR(150),
 	city VARCHAR(150),
 	country VARCHAR(150)
 );
 
 CREATE TABLE Employee(
-	ID INT PRIMARY KEY,
+	ID INT IDENTITY(1,1) PRIMARY KEY,
 	name VARCHAR(15),
 	surname VARCHAR(15),
 	agency_ID INT REFERENCES TravelAgency
 );
 
 CREATE TABLE Client(
-	client_ID INT PRIMARY KEY,
+	client_ID INT IDENTITY(1,1) PRIMARY KEY,
 	name VARCHAR(150),
 	surname VARCHAR(150),
 	email VARCHAR(150),
@@ -23,7 +23,7 @@ CREATE TABLE Client(
 	);
 
 CREATE TABLE Hotel(
-	hotel_ID INT PRIMARY KEY,
+	hotel_ID INT IDENTITY(1,1) PRIMARY KEY,
 	name VARCHAR(150),
 	address VARCHAR(150),
 	city VARCHAR(150),
@@ -35,7 +35,7 @@ CREATE TABLE Hotel(
 );
 
 CREATE TABLE HotelOffer(
-	offer_ID INT PRIMARY KEY,
+	offer_ID INT IDENTITY(1,1) PRIMARY KEY,
 	start_date DATE,
 	end_date DATE,
 	price FLOAT,
@@ -45,7 +45,7 @@ CREATE TABLE HotelOffer(
 );
 
 CREATE TABLE ParadiseOffer(
-	offer_ID INT PRIMARY KEY,
+	offer_ID INT IDENTITY(1,1) PRIMARY KEY,
 	costs FLOAT,
 	OTW FLOAT,
 	creation_date DATE,
@@ -55,7 +55,7 @@ CREATE TABLE ParadiseOffer(
 );
 
 CREATE TABLE Payment(
-	transaction_no INT PRIMARY KEY,
+	transaction_no INT IDENTITY(1,1) PRIMARY KEY,
 	amount FLOAT,
 	payment_date DATE,
 	payment_method VARCHAR(50),
@@ -64,7 +64,7 @@ CREATE TABLE Payment(
 );
 
 CREATE TABLE Opinion(
-	opinion_ID INT PRIMARY KEY,
+	opinion_ID INT IDENTITY(1,1) PRIMARY KEY,
 	overall_reat INT,
 	location INT,
 	food INT,
@@ -76,7 +76,7 @@ CREATE TABLE Opinion(
 );
 
 CREATE TABLE Airline(
-	ID INT PRIMARY KEY,
+	ID INT IDENTITY(1,1) PRIMARY KEY,
 	name VARCHAR(150),
 	email VARCHAR(150),
 	telephone_number INT,
@@ -84,7 +84,7 @@ CREATE TABLE Airline(
 );
 
 CREATE TABLE Flight(
-	flight_NO INT PRIMARY KEY,
+	flight_NO INT IDENTITY(1,1) PRIMARY KEY,
 	airplane VARCHAR(150),
 	cost FLOAT,
 	date DATE,
@@ -98,7 +98,7 @@ CREATE TABLE Flight(
 );
 
 CREATE TABLE Airport (
-	airport_ID INT PRIMARY KEY,
+	airport_ID INT IDENTITY(1,1) PRIMARY KEY,
 	airport_name VARCHAR(150),
 	city VARCHAR(150),
 	country VARCHAR(150),

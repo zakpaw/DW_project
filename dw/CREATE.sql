@@ -1,5 +1,6 @@
--- DIMENTIONS --
 USE Agency_DW;
+
+-- DIMENTIONS --
 CREATE TABLE TravelAgency( --done
 	agency_ID INTEGER IDENTITY(1,1) PRIMARY KEY,
 	agency_name VARCHAR(100),
@@ -100,14 +101,15 @@ CREATE TABLE TripScheduling(
 	OTW INT,
 	PRIMARY KEY(flight_ID, employee_ID, hotel_ID, creation_date_ID, creation_time_ID, hotel_start_date_ID, hotel_end_date_ID, hotel_start_time_ID, hotel_end_time_ID)
 );
-USE Agency_DW;
-SELECT * FROM  TripScheduling;
-SELECT * FROM Flights;
-SELECT * FROM AirportNearHotel;
-SELECT * FROM Employee;
-SELECT * FROM  Date;
-SELECT * FROM Time;
-SELECT * FROM LocalAirport;
-SELECT * FROM DestinationAirport;
-SELECT * FROM Airline;
-SELECT * FROM Hotel;
+-- USE Agency_DW;
+
+-- SELECT * FROM  TripScheduling;
+-- SELECT * FROM Flights;
+-- SELECT * FROM AirportNearHotel;
+-- SELECT * FROM Employee;
+-- SELECT * FROM  Date;
+-- SELECT * FROM Time;
+-- SELECT * FROM LocalAirport;
+-- SELECT * FROM DestinationAirport;
+-- SELECT * FROM Airline;
+-- SELECT * FROM Hotel;

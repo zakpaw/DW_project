@@ -113,7 +113,7 @@ use Agency_DW
 SELECT * FROM Employee
 
 DROP TABLE dbo.AgencyTemp;
-drop TABLE Employee
+-- drop TABLE Employee
 DROP TABLE dbo.EmployeesTemp;
 Drop View ETLEmployeeData; 
 

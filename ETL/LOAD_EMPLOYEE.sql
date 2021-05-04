@@ -32,7 +32,7 @@ go
 CREATE VIEW ETLEmployeeData
 AS
 SELECT 
-	t3.[agency_ID], --use this to load cos tam cos tam
+	t3.[agency_ID], 
 	t1.[PESEL],
 	[NameAndSurname] = Cast([empName] + ' ' + [empSurname] as nvarchar(128)),
 	CASE
@@ -41,13 +41,13 @@ SELECT
 		ELSE 'more than five years'
 	END AS [Seniority],
 	t1.[Education]
-FROM dbo.EmployeesTemp as t1
-JOIN dbo.AgencyTemp as t2 ON t1.agencyID = t2.agencyID
-JOIN dbo.TravelAgency as t3 ON t2.agencyID = t3.agency_ID --idk czy chodzi tu o warehouse czy o database
+FROM EmployeesTemp as t1
+JOIN AgencyTemp as t2 ON t1.agencyID = t2.agencyID
+JOIN TravelAgency as t3 ON t2.agencyName = t3.agency_name 
 ;
 go
-
---select * from ETLEmployeeData
+USE Agency_DW
+select * from ETLEmployeeData
 
 MERGE INTO Employee as TT
 	USING ETLEmployeeData as ST
@@ -60,23 +60,20 @@ MERGE INTO Employee as TT
 					ST.NameAndSurname,
 					ST.Education,
 					ST.Seniority ,
-					0				
+					1				
 					)
-			WHEN Matched -- when PID number match, 
-			-- or the Education level...
+			WHEN Matched
 				AND (ST.agency_ID <> TT.travel_agency_ID
-			-- or the WorkExperience 
 				OR ST.Seniority <> TT.Seniority
-			-- or the BookstoreKey
 				OR ST.Education <> TT.Education)
 			THEN
 				UPDATE
-				SET TT.is_active = 1
+				SET TT.is_active = 0
 			WHEN Not Matched BY Source
 			AND TT.PESEL != 'UNKNOWN' -- do not update the UNKNOWN tuple
 			THEN
 				UPDATE
-				SET TT.is_active = 1
+				SET TT.is_active = 0
 			;
 
 -- SELect * from DimSeller;
@@ -96,7 +93,7 @@ INSERT INTO Employee(
 		NameAndSurname, 
 		Education, 
 		seniority,
-		0
+		1
 			
 	FROM ETLEmployeeData
 	EXCEPT
@@ -106,14 +103,17 @@ INSERT INTO Employee(
 		name_surname, 
 		Education, 
 		seniority,
-		0
+		1
 	FROM Employee;
 
-
+UPDATE Agency_DW.dbo.Employee 
+SET education = 'PhD'
+WHERE employee_ID = 7;
+use Agency_DW
+SELECT * FROM Employee
 
 DROP TABLE dbo.AgencyTemp;
+drop TABLE Employee
 DROP TABLE dbo.EmployeesTemp;
 Drop View ETLEmployeeData; 
-
--- SELECT * FROM Employee
 

@@ -1,3 +1,4 @@
+
 USE Agency_DW
 go
 Declare @StartDate date; 

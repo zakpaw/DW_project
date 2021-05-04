@@ -7,7 +7,7 @@ go
 CREATE VIEW DestinationTemp
 AS 
 SELECT DISTINCT
-	DW2.airport_ID AS 'airline_ID',
+	DW2.airline_ID,
 	DW1.airport_ID AS 'destination_airport_ID',
 	DW3.time_ID AS 'flight_departure_start_ID',
 	DB4.discount AS 'airline_discount',

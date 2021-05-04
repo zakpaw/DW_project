@@ -2,7 +2,7 @@ USE Agency_DW
 GO
 
 CREATE VIEW DestinationFlights
-    AS SELECT 
+    AS SELECT DISTINCT
         CASE WHEN F.date > F2.date THEN  F2.flight_NO
             ELSE F.flight_NO END as flight_NO,
         CASE WHEN F.date > F2.date THEN  F2.date

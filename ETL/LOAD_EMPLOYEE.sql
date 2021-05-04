@@ -46,8 +46,6 @@ JOIN AgencyTemp as t2 ON t1.agencyID = t2.agencyID
 JOIN TravelAgency as t3 ON t2.agencyName = t3.agency_name 
 ;
 go
-USE Agency_DW
-select * from ETLEmployeeData
 
 MERGE INTO Employee as TT
 	USING ETLEmployeeData as ST
@@ -75,8 +73,6 @@ MERGE INTO Employee as TT
 				UPDATE
 				SET TT.is_active = 0
 			;
-
--- SELect * from DimSeller;
 
 -- INSERTING CHANGED ROWS TO THE DIMSELLER TABLE
 INSERT INTO Employee(

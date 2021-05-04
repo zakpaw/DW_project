@@ -29,7 +29,5 @@ MERGE INTO Hotel as TT
 					ST.is_befriended
 					);
 
-SELECT * FROM Agency_DW.dbo.Hotel 
-
 
 

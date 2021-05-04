@@ -2,11 +2,9 @@ USE Agency_DW
 GO
 
 CREATE VIEW LocalFlights
-    AS SELECT 
+    AS SELECT DISTINCT
         CASE WHEN F.date < F2.date THEN  F2.flight_NO
-            ELSE F.flight_NO END as flight_NO,
-        CASE WHEN F.date < F2.date THEN  F2.date
-            ELSE F.date END as date
+            ELSE F.flight_NO END as flight_NO
     FROM AgencyData.dbo.Flight AS F
     JOIN AgencyData.dbo.Flight AS F2 ON F.paradise_offer_id = F2.paradise_offer_id
     WHERE F.flight_NO <> F2.flight_NO
@@ -16,7 +14,7 @@ CREATE VIEW LocalTemps
 	DB2.airport_name,
 	DB2.city,
 	DB2.country
-	FROM DestinationFlights AS V1
+	FROM LocalFlights AS V1
 	JOIN AgencyData.dbo.TravelBetween AS DB1 ON V1.flight_NO = DB1.flight_NO
 	JOIN AgencyData.dbo.Airport AS DB2 ON DB2.airport_ID = DB1.airport_ID
 

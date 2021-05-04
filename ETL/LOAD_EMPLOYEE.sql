@@ -106,10 +106,9 @@ UPDATE Agency_DW.dbo.Employee
 SET education = 'PhD'
 WHERE employee_ID = 7;
 use Agency_DW
-SELECT * FROM Employee
 
 DROP TABLE dbo.AgencyTemp;
 -- drop TABLE Employee
 DROP TABLE dbo.EmployeesTemp;
-Drop View ETLEmployeeData; 
+Drop VIEW ETLEmployeeData; 
 

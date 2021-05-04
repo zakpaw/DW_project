@@ -1,5 +1,6 @@
 USE Agency_DW
 GO
+
 CREATE VIEW HotelTemps
 AS
 SELECT 
@@ -10,7 +11,7 @@ SELECT
 		WHEN is_befriended = 'Yes' THEN 'befriended'
 		WHEN is_befriended = 'No' THEN 'not-befriended'
 	END AS 	is_befriended
-	FROM AgencyData.dbo.Hotel
+	FROM AgencyData.dbo.Hotel;
 
 
 MERGE INTO Hotel as TT
@@ -28,6 +29,3 @@ MERGE INTO Hotel as TT
 					ST.country,
 					ST.is_befriended
 					);
-
-
-

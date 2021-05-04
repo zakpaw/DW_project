@@ -30,4 +30,4 @@ MERGE INTO AirportNearHotel as TT
 					ST.travelled_time
 					);
 
-DROP VIEW HotelAirportTemps
+DROP VIEW HotelAirportTemps;

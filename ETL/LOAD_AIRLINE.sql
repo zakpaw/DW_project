@@ -10,5 +10,3 @@ MERGE INTO Airline as TT
 					Values (
 					ST.name
 					);
-
-SELECT * FROM AgencyData.dbo.Airline 

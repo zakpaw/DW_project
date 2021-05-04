@@ -12,6 +12,3 @@ MERGE INTO TravelAgency as TT
 					ST.city,
 					ST.country
 					);
-
-
-SELECT * FROM TravelAgency

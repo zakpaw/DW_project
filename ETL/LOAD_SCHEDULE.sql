@@ -8,7 +8,7 @@ CREATE VIEW StartFlights
             ELSE F.paradise_offer_id END as 'paradise_offer'
     FROM AgencyData.dbo.Flight AS F
     JOIN AgencyData.dbo.Flight AS F2 ON F.paradise_offer_id = F2.paradise_offer_id
-    WHERE F.flight_NO <> F2.flight_NO
+    WHERE F.flight_NO <> F2.flight_NO;
 
 CREATE VIEW HotelStartTemps
 AS SELECT
@@ -27,7 +27,7 @@ AS SELECT
 	JOIN Date AS DW2 ON DW2.date = DAY(DB2.start_date) 	AND DW2.year = YEAR(DB2.start_date) AND DW2.month = DATENAME(month,DB2.start_date)
 	JOIN StartFlights AS V1 ON V1.paradise_offer = DB1.offer_ID
 	JOIN AgencyData.dbo.Flight AS DB4 ON DB4.flight_NO = V1.flight_NO
-	JOIN AgencyData.dbo.Airline AS DB5 ON DB5.ID = DB4.airline_ID
+	JOIN AgencyData.dbo.Airline AS DB5 ON DB5.ID = DB4.airline_ID;
 
 CREATE VIEW HotelEndTemps
 AS SELECT
@@ -40,7 +40,9 @@ AS SELECT
 	JOIN AgencyData.dbo.Hotel AS DB3 ON DB3.hotel_ID = DB2.hotel_ID
 	JOIN AgencyData.dbo.Employee AS DB4 ON DB4.ID = DB1.employee_ID 
 	JOIN Time AS DW1 ON DW1.hour = DB3.ending_hour AND DW1.minute = 0
-	JOIN Date AS DW2 ON DW2.date = DAY(DB2.end_date) AND DW2.year = YEAR(DB2.end_date) AND DW2.month = DATENAME(month,DB2.end_date)
+	JOIN Date AS DW2 ON DW2.date = DAY(DB2.end_date) 
+		AND DW2.year = YEAR(DB2.end_date) 
+		AND DW2.month = DATENAME(month,DB2.end_date);
 
 CREATE VIEW EmployeeScheduleTemp
 AS SELECT 
@@ -48,7 +50,7 @@ AS SELECT
 	[name_surname] = Cast([name] + ' ' + [surname] as nvarchar(128)),
 	DB1.offer_ID
 	FROM AgencyData.dbo.ParadiseOffer AS DB1
-	JOIN AgencyData.dbo.Employee AS DB2 ON DB2.ID = DB1.employee_ID
+	JOIN AgencyData.dbo.Employee AS DB2 ON DB2.ID = DB1.employee_ID;
 
 
 CREATE VIEW SchedulingTemps
@@ -75,15 +77,13 @@ AS SELECT
 	JOIN Date AS DW2 ON DW2.date = DAY(DB1.creation_date) AND DW2.year = YEAR(DB1.creation_date) AND DW2.month = DATENAME(month,DB1.creation_date)
 	JOIN Time AS DW4 ON DW4.hour = DB1.creation_time AND DW4.minute = 0
 	JOIN Hotel as DW3 ON DW3.hotel_name = V3.hotel_name 
-	JOIN Flights AS DW5 ON DW5.cost = V2.cost AND DW5.flight_duration = V2.flight_duration --AND DW5.airline_discount = V2.discount 
+	JOIN Flights AS DW5 ON DW5.cost = V2.cost AND DW5.flight_duration = V2.flight_duration; --AND DW5.airline_discount = V2.discount 
 
-SELECT * FROM SchedulingTemps
-
-DROP VIEW HotelStartTemps
-DROP VIEW HotelEndTemps
-DROP VIEW EmployeeScheduleTemp
-DROP VIEW SchedulingTemps
-DROP VIEW StartFlights
+DROP VIEW HotelStartTemps;
+DROP VIEW HotelEndTemps;
+DROP VIEW EmployeeScheduleTemp;
+DROP VIEW SchedulingTemps;
+DROP VIEW StartFlights;
 
 
 

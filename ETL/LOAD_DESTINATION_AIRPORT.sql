@@ -9,7 +9,7 @@ CREATE VIEW DestinationFlights
             ELSE F.date END as date
     FROM AgencyData.dbo.Flight AS F
     JOIN AgencyData.dbo.Flight AS F2 ON F.paradise_offer_id = F2.paradise_offer_id
-    WHERE F.flight_NO <> F2.flight_NO
+    WHERE F.flight_NO <> F2.flight_NO;
 
 CREATE VIEW DestinationTemps
 	AS SELECT
@@ -18,7 +18,7 @@ CREATE VIEW DestinationTemps
 	DB2.country
 	FROM DestinationFlights AS V1
 	JOIN AgencyData.dbo.TravelBetween AS DB1 ON V1.flight_NO = DB1.flight_NO
-	JOIN AgencyData.dbo.Airport AS DB2 ON DB2.airport_ID = DB1.airport_ID
+	JOIN AgencyData.dbo.Airport AS DB2 ON DB2.airport_ID = DB1.airport_ID;
 
 	   
 MERGE INTO DestinationAirport as TT
@@ -35,6 +35,6 @@ MERGE INTO DestinationAirport as TT
 					);
 
 
-DROP VIEW DestinationFlights
+DROP VIEW DestinationFlights;
 
-DROP VIEW DestinationTemps
+DROP VIEW DestinationTemps;

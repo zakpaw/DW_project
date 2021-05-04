@@ -81,7 +81,7 @@ CREATE TABLE Flights(
 	flight_departure_end_ID INT REFERENCES Time,
 	flight_duration INT,
 	cost MONEY,
-	airline_discount INT
+	airline_discount FLOAT
 );
 
 CREATE TABLE TripScheduling(

@@ -19,6 +19,4 @@ WHILE @H <= @HoursInDay
 	SET @H = @H + 1
 	SET @M = 0
 END
-
-SELECT * FROM TIME
 	

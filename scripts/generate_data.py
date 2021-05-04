@@ -120,7 +120,7 @@ def main():
             fake_data = defaultdict(list)
             for id in range(int(lens[tab]/2)):
                 if tab == 'Flight':
-                    offerID = id % int(DB_entity.LENGTH / 2)
+                    offerID = int(id % DB_entity.LENGTH / 2 + (DB_entity.LENGTH/2 * period))
                     tables[tab](fake_data, fake, id + DB_entity.LENGTH * period, offerID)
                 else:
                     tables[tab](fake_data, fake, id + DB_entity.LENGTH * period)

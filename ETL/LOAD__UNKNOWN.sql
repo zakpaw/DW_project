@@ -33,4 +33,4 @@ VALUES (-1, 'UNKNOWN', 'UNKNOWN', 'UNKNOWN')
 SET IDENTITY_INSERT Employee ON;  
 GO 
 INSERT INTO Employee (employee_ID,travel_agency_ID,PESEL,name_surname,education,seniority,is_active) 
-VALUES (-1, NULL, -1, 'UNKNOWN', ' ', ' ', 1)
+VALUES (-1, NULL, -1, 'UNKNOWN', NULL,NULL, 1)

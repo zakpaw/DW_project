@@ -12,7 +12,7 @@ SELECT
 		WHEN is_befriended = 'No' THEN 'not-befriended'
 	END AS 	is_befriended
 	FROM AgencyData.dbo.Hotel;
-
+GO
 
 MERGE INTO Hotel as TT
 	USING HotelTemps as ST

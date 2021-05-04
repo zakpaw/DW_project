@@ -13,7 +13,7 @@ AS SELECT
 	JOIN AgencyData.dbo.Airport AS DB3 ON DB1.airport_ID = DB3.airport_ID
 	JOIN Hotel AS DW1 ON DW1.hotel_name = DB2.name
 	JOIN DestinationAirport AS DW2 ON DB3.airport_name = DW2.airport_name;
-
+GO
 
 
 MERGE INTO AirportNearHotel as TT

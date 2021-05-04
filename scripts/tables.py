@@ -17,7 +17,7 @@ def hotel(table: dict, fake: object, id: int)->dict:
 def airport(table: dict, fake: object, id: int)->dict:
     city = fake.city()
     table["airport_ID"].append(id)
-    table["airport_name"].append(str(city) + 'airport')
+    table["airport_name"].append(str(city) + ' Airport')
     table["city"].append(city)
     table["country"].append(fake.country())
 

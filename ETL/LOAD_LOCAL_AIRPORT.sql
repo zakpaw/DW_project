@@ -8,6 +8,7 @@ CREATE VIEW LocalFlights
     FROM AgencyData.dbo.Flight AS F
     JOIN AgencyData.dbo.Flight AS F2 ON F.paradise_offer_id = F2.paradise_offer_id
     WHERE F.flight_NO <> F2.flight_NO;
+GO
 
 CREATE VIEW LocalTemps
 	AS SELECT
@@ -17,6 +18,7 @@ CREATE VIEW LocalTemps
 	FROM LocalFlights AS V1
 	JOIN AgencyData.dbo.TravelBetween AS DB1 ON V1.flight_NO = DB1.flight_NO
 	JOIN AgencyData.dbo.Airport AS DB2 ON DB2.airport_ID = DB1.airport_ID;
+GO
 
 MERGE INTO LocalAirport as TT
 	USING LocalTemps as ST

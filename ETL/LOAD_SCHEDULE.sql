@@ -10,6 +10,7 @@ CREATE VIEW StartFlights
     FROM AgencyData.dbo.Flight AS F
     JOIN AgencyData.dbo.Flight AS F2 ON F.paradise_offer_id = F2.paradise_offer_id
     WHERE F.flight_NO <> F2.flight_NO;
+GO
 
 CREATE VIEW HotelStartTemps
 AS SELECT
@@ -29,7 +30,7 @@ AS SELECT
 	JOIN StartFlights AS V1 ON V1.paradise_offer = DB1.offer_ID
 	JOIN AgencyData.dbo.Flight AS DB4 ON DB4.flight_NO = V1.flight_NO
 	JOIN AgencyData.dbo.Airline AS DB5 ON DB5.ID = DB4.airline_ID;
-
+GO
 
 If (object_id('dbo.EmpTemp') is not null) DROP TABLE dbo.EmployeesTemp;
 CREATE TABLE dbo.EmpTemp(agencyID VARCHAR(255) , employeeID VARCHAR(255), PESEL VARCHAR(15), empName varchar(255), 
@@ -42,6 +43,7 @@ BULK INSERT dbo.EmpTemp
  WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='<>');
+GO
 
 CREATE VIEW HotelEndTemps
 AS SELECT
@@ -59,9 +61,7 @@ AS SELECT
 	JOIN Date AS DW2 ON DW2.date = DAY(DB2.end_date) 
 		AND DW2.year = YEAR(DB2.end_date) 
 		AND DW2.month = DATENAME(month,DB2.end_date);
-
-SELECT * FROM HotelEndTemps
-ORDER BY offer_ID
+GO
 
 
 CREATE VIEW SchedulingTemps
@@ -90,7 +90,7 @@ AS SELECT
 	JOIN Time AS DW4 ON DW4.hour = DB1.creation_time AND DW4.minute = 0
 	JOIN Hotel as DW3 ON DW3.hotel_name = V3.hotel_name 
 	JOIN Flights AS DW5 ON DW5.cost = V2.cost AND DW5.flight_duration = V2.flight_duration AND DW5.airline_discount = V2.discount;
-
+GO
 
 MERGE INTO TripScheduling as TT
 	USING SchedulingTemps as ST
@@ -128,12 +128,12 @@ MERGE INTO TripScheduling as TT
 					ST. profit,
 					ST.OTW );
 
-SELECT * FROM SchedulingTemps
-ORDER BY creation_time_ID
+-- SELECT * FROM SchedulingTemps
+-- ORDER BY creation_time_ID
 DROP VIEW HotelStartTemps;
 DROP VIEW HotelEndTemps;
 DROP VIEW SchedulingTemps;
 DROP VIEW StartFlights;
-
-SELECT * FROM TripScheduling
+DROP TABLE Agency_DW.dbo.EmpTemp;
+-- SELECT * FROM TripScheduling
 

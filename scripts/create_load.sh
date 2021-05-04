@@ -11,6 +11,8 @@ createAndLoad() {
     sqlcmd -S 127.0.0.1 -U sa -P ${SA_PASSWORD} -i /home/dw/CREATE.sql
     echo "Loading data to AgencyData"
     sqlcmd -S 127.0.0.1 -U sa -P ${SA_PASSWORD} -i /home/db/load_csv.sql
+    echo "Loading UNKNOWN"
+    sqlcmd -S 127.0.0.1 -U sa -P ${SA_PASSWORD} -i /home/ETL/LOAD__UNKNOWN.sql
     echo "Running ETL"
     sqlcmd -S 127.0.0.1 -U sa -P ${SA_PASSWORD} -i /home/ETL/LOAD_TIME.sql
     sqlcmd -S 127.0.0.1 -U sa -P ${SA_PASSWORD} -i /home/ETL/LOAD_DATE.sql

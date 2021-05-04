@@ -24,8 +24,8 @@ BULK INSERT dbo.EmployeesTemp
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='<>');
 
-SELECT * FROM EmployeesTemp
-ORDER BY PESEL
+-- SELECT * FROM EmployeesTemp
+-- ORDER BY PESEL
 
 If (object_id('ETLEmployeeData') is not null) Drop View ETLEmployeeData;
 go
@@ -105,13 +105,12 @@ INSERT INTO Employee(
 
 UPDATE Agency_DW.dbo.Employee 
 SET education = 'Master'
-WHERE employee_ID = 526;
+WHERE employee_ID = -1;
 
-SELECT * FROM Employee
-ORDER BY name_surname
-DELETE FROM Employee
+-- SELECT * FROM Employee
+-- ORDER BY name_surname
+-- DELETE FROM Employee
 DROP TABLE dbo.AgencyTemp;
-
 DROP TABLE dbo.EmployeesTemp;
 Drop VIEW ETLEmployeeData; 
 

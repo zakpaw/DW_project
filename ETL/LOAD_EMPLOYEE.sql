@@ -1,6 +1,7 @@
 USE Agency_DW
 GO
 
+
 If (object_id('dbo.AgencyTemp') is not null) DROP TABLE dbo.AgencyTemp;
 CREATE TABLE dbo.AgencyTemp(agencyID varchar(300), agencyName varchar(300), AgencyeAddress varchar(300), zipcode varchar(7), city varchar(200), telephone varchar(20), email varchar(300));
 go
@@ -22,6 +23,9 @@ BULK INSERT dbo.EmployeesTemp
  WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='<>');
+
+SELECT * FROM EmployeesTemp
+ORDER BY PESEL
 
 If (object_id('ETLEmployeeData') is not null) Drop View ETLEmployeeData;
 go
@@ -58,13 +62,14 @@ MERGE INTO Employee as TT
 					)
 			WHEN Matched
 				AND (ST.agency_ID <> TT.travel_agency_ID
+				OR ST.NameAndSurname <> TT.name_surname
 				OR ST.Seniority <> TT.Seniority
 				OR ST.Education <> TT.Education)
 			THEN
 				UPDATE
 				SET TT.is_active = 0
 			WHEN Not Matched BY Source
-			AND TT.PESEL != 'UNKNOWN' -- do not update the UNKNOWN tuple
+			AND TT.PESEL != -1 
 			THEN
 				UPDATE
 				SET TT.is_active = 0
@@ -103,7 +108,8 @@ SET education = 'Master'
 WHERE employee_ID = 526;
 
 SELECT * FROM Employee
-
+ORDER BY name_surname
+DELETE FROM Employee
 DROP TABLE dbo.AgencyTemp;
 
 DROP TABLE dbo.EmployeesTemp;

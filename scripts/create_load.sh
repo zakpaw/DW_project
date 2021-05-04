@@ -23,6 +23,7 @@ createAndLoad() {
     sqlcmd -S 127.0.0.1 -U sa -P ${SA_PASSWORD} -i /home/ETL/LOAD_AIRPORT_NEAR_HOTEL.sql
     sqlcmd -S 127.0.0.1 -U sa -P ${SA_PASSWORD} -i /home/ETL/LOAD_FLIGHTS.sql
     sqlcmd -S 127.0.0.1 -U sa -P ${SA_PASSWORD} -i /home/ETL/LOAD_SCHEDULE.sql
+    echo "=== ALL DONE ==="
 }
 
 createAndLoad || (sleep 5 && createAndLoad)

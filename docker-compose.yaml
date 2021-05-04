@@ -11,6 +11,6 @@ services:
             - /bin/bash
             - -c 
             - |
-              /opt/mssql/bin/sqlservr & sleep 10
+              /opt/mssql/bin/sqlservr & sleep 30
               ./scripts/create_load.sh
               sleep infinity

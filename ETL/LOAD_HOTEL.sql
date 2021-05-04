@@ -29,3 +29,4 @@ MERGE INTO Hotel as TT
 					ST.country,
 					ST.is_befriended
 					);
+DROP VIEW HotelTemps;

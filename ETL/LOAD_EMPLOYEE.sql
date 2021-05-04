@@ -11,10 +11,6 @@ WITH (FIRSTROW = 2,
 FIELDTERMINATOR = '|',
 ROWTERMINATOR='<>');
 
-
---SELECT * FROM dbo.BookstoresTemp;
-
-
 If (object_id('dbo.EmployeesTemp') is not null) DROP TABLE dbo.EmployeesTemp;
 CREATE TABLE dbo.EmployeesTemp(agencyID VARCHAR(255) , employeeID VARCHAR(255), PESEL VARCHAR(15), empName varchar(255), 
 								empSurname varchar(255), birthDate date, education varchar(255),
@@ -99,16 +95,17 @@ INSERT INTO Employee(
 		name_surname, 
 		Education, 
 		seniority,
-		1
+		is_active
 	FROM Employee;
 
 UPDATE Agency_DW.dbo.Employee 
-SET education = 'PhD'
-WHERE employee_ID = 7;
-use Agency_DW
+SET education = 'Master'
+WHERE employee_ID = 526;
+
+SELECT * FROM Employee
 
 DROP TABLE dbo.AgencyTemp;
--- drop TABLE Employee
+
 DROP TABLE dbo.EmployeesTemp;
 Drop VIEW ETLEmployeeData; 
 

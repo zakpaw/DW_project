@@ -1,0 +1,264 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="6e7fa95e-7d74-46f1-b2af-0973276bdd32" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Flights</ID>
+  <Name>Flights</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1049" scrolltop="-3958" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6541" y="12023" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01ee00009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Flights" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4403" height="4106" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000331100000a100000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Flights" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1049</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3958</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="b1ae738f-d86e-499e-ac0f-70f062d48855">
+    <DataSourceViewID>Agency DW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="17872474-88e6-4c78-a0ed-52d892b0522d">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="c5f62bca-9a44-4c63-ab82-55d62ae4de16">
+      <ID>Flight ID</ID>
+      <Name>Flight ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="225270e3-74a1-49c3-a473-4eafa5cc8423">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c4d7afa9-5218-4dfb-a5fc-42f8044c9c37">
+            <TableID>dbo_Flights</TableID>
+            <ColumnID>flight_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="172ea176-97fd-4995-a1d3-0d6dcdee73fe">
+          <AttributeID>Flight Departure End ID</AttributeID>
+          <Name>Flight Departure End ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="662b425b-2ce6-4fa3-98c1-ebf9dc51d257">
+          <AttributeID>Flight Departure Start ID</AttributeID>
+          <Name>Flight Departure Start ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8a467eda-1a60-4d01-924e-7325e0306be0">
+          <AttributeID>Local Airport ID</AttributeID>
+          <Name>Local Airport ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2e0f8c87-72cf-4318-815d-84702a582dfb">
+          <AttributeID>Destination Airport ID</AttributeID>
+          <Name>Destination Airport ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7a031ed0-8dd9-4939-8352-9a2630ca2745">
+          <AttributeID>Airline ID</AttributeID>
+          <Name>Airline ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bd412ff7-7f17-45f5-a1f7-6f1ff0ef2fd5">
+          <AttributeID>Flight Duration</AttributeID>
+          <Name>Flight Duration</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="52c6a968-787c-4c48-9898-b2ad17d3fc83">
+          <AttributeID>Cost</AttributeID>
+          <Name>Cost</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="aaa10fbd-4ce9-4d97-9ac9-e6542f738388">
+          <AttributeID>Airline Discount</AttributeID>
+          <Name>Airline Discount</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2cc37203-a8f5-4332-8863-0f2ebb9c2d2e">
+      <ID>Flight Departure End ID</ID>
+      <Name>Flight Departure End ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2ba865e1-5036-408c-a1f4-48ce284e34a0">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d2a5719a-6604-4fc7-80ec-460ca467e6c1">
+            <TableID>dbo_Flights</TableID>
+            <ColumnID>flight_departure_end_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5c03f592-a815-4fa2-b9a5-043069d8d8a3">
+      <ID>Flight Departure Start ID</ID>
+      <Name>Flight Departure Start ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ed4aba49-6afd-4cc5-a2e1-ee49a52a450f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2aed15f1-3754-470f-b499-26b204a529bb">
+            <TableID>dbo_Flights</TableID>
+            <ColumnID>flight_departure_start_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="990e1c02-689c-403b-8173-061be6f87e77">
+      <ID>Local Airport ID</ID>
+      <Name>Local Airport ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="83ea23d8-404f-4ffb-a0d3-30936ea8283d">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c7a5c3af-6061-4407-90bb-47f5ed0aeea0">
+            <TableID>dbo_Flights</TableID>
+            <ColumnID>local_airport_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="98322268-e694-4b08-b5a1-0b5b51b716cb">
+      <ID>Destination Airport ID</ID>
+      <Name>Destination Airport ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="716a604b-3219-4edf-bc8b-98cec5a1990c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e7de794f-607c-47de-a0b6-65dbce3ccdc3">
+            <TableID>dbo_Flights</TableID>
+            <ColumnID>destination_airport_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5f6efe44-d393-4df8-ac3a-e671ec6c69db">
+      <ID>Airline ID</ID>
+      <Name>Airline ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6830b296-669c-4356-89b9-e0850e55afb5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="47ef7aed-cbe4-46a0-bfa8-f93c6c652d4d">
+            <TableID>dbo_Flights</TableID>
+            <ColumnID>airline_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="158ed121-7670-4006-a37c-5e2955bbf425">
+      <ID>Flight Duration</ID>
+      <Name>Flight Duration</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cd627426-ebfb-45be-be95-6201635f31a7">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6a6c9b7d-ca54-43ae-98e2-6f37f36ab1df">
+            <TableID>dbo_Flights</TableID>
+            <ColumnID>flight_duration</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="732d36df-e8bf-44df-a574-d0a38ae2c875">
+      <ID>Cost</ID>
+      <Name>Cost</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="73f38542-836b-4d40-8b6f-b6c854a30779">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bc7c6389-4651-4e02-8365-f6688b63663e">
+            <TableID>dbo_Flights</TableID>
+            <ColumnID>cost</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a5bfe3ba-0449-42c7-9258-e2f648b6adff">
+      <ID>Airline Discount</ID>
+      <Name>Airline Discount</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="692cf22e-0763-4f9a-8830-00982b03c2ff">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="851c6af8-bec5-4ad2-b835-a7e14327fe5f">
+            <TableID>dbo_Flights</TableID>
+            <ColumnID>airline_discount</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

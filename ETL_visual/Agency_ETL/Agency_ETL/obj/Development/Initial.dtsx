@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2021 8:47:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-3H4M2KP"
+  DTS:CreatorName="DESKTOP-3H4M2KP\Weronika"
+  DTS:DTSID="{D724DB4C-A66A-4998-B383-E67827CED8B7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{34A09CB1-7818-42C2-8F51-2FA2295CC805}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[127.0.0.1.Agency_DW.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{90875BEC-8D12-4F6A-9D0B-22DD371BBDE6}"
+      DTS:ObjectName="127.0.0.1.Agency_DW.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=127.0.0.1;User ID=sa;Initial Catalog=Agency_DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3AK2K9S770uK7CWR8ydSTgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADxyTtNcPG0S1vCCg0eIAY2GBchcmqEql2Lx0tEQTyzPgAAAAAOgAAAAAIAACAAAAALf4Tek7WYshx3mc7ExGXs7PFiAcIOSJLseT2nYRQiQyAAAAA+j9JHtOzr/xIPZ13WO6nuM52g+pKuUIEzWWXRK09RQUAAAAC+jiJWfTs9GspczNbVmzGnyN4nsk3g6VBdTuhtVI7IwRBWZ9kp+i7KHJZklVefY7ALRjVoD3dxyU5deLFUqF0E</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LOAD_DATE.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{BCF79132-11AD-40FA-A377-3D0816AA6B17}"
+      DTS:ObjectName="LOAD_DATE.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Weronika\Desktop\DW_project\ETL\LOAD_DATE.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LOAD_TIME.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{5C153BB8-1845-4643-890A-6CCE5AEA6BFD}"
+      DTS:ObjectName="LOAD_TIME.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Weronika\Desktop\DW_project\ETL\LOAD_TIME.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LOAD__UNKNOWN.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{11B6EA70-8B24-49E7-A94F-AAA7AC5B26BA}"
+      DTS:ObjectName="LOAD__UNKNOWN.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Weronika\Desktop\DW_project\ETL\LOAD__UNKNOWN.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Date"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9F4B1194-3423-4141-9EB4-4B3D2683EB32}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Date"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{90875BEC-8D12-4F6A-9D0B-22DD371BBDE6}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="LOAD_DATE.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Time"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D77BB043-C2AB-4F12-BE96-553C63BD87E6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Time"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{90875BEC-8D12-4F6A-9D0B-22DD371BBDE6}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="LOAD_TIME.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\UNKNOWN"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D866E170-5514-4F95-AB02-1895D6935C33}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="UNKNOWN"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{90875BEC-8D12-4F6A-9D0B-22DD371BBDE6}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="LOAD__UNKNOWN.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="100.8,41.6"
+          Id="Package\Date"
+          TopLeft="167.857145715733,103.235295565483" />
+        <NodeLayout
+          Size="101.6,41.6"
+          Id="Package\Time"
+          TopLeft="327.857148440517,103.235295565483" />
+        <NodeLayout
+          Size="130.4,41.6"
+          Id="Package\UNKNOWN"
+          TopLeft="237.142861181376,179.705884873248" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

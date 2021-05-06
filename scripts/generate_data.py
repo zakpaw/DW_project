@@ -121,13 +121,13 @@ def main():
             for id in range(int(lens[tab]/2)):
                 if tab == 'Flight':
                     offerID = int(id % DB_entity.LENGTH / 2 + (DB_entity.LENGTH/2 * period))
-                    tables[tab](fake_data, fake, id + DB_entity.LENGTH * period, offerID)
+                    tables[tab](fake_data, fake, id + int(DB_entity.LENGTH/2) * period, offerID)
                 else:
-                    tables[tab](fake_data, fake, id + DB_entity.LENGTH * period)
+                    tables[tab](fake_data, fake, id + int(DB_entity.LENGTH/2) * period)
                 
             path = os.path.join(HOME_DIR, "db", f"load_csv_{period}.sql")
 
-            if (tab == next(iter(tables))) and (period == 0):
+            if (tab == next(iter(tables))):
                 f = open(path, "w")
                 f.write("USE AgencyData;\n\n")
                 f.close()

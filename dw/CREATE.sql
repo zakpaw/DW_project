@@ -11,7 +11,7 @@ CREATE TABLE TravelAgency( --done
 CREATE TABLE Employee( --poprawic
 	employee_ID INTEGER IDENTITY(1,1) PRIMARY KEY,
 	travel_agency_ID INT REFERENCES TravelAgency,
-	PESEL VARCHAR(11),
+	PESEL VARCHAR(12),
 	name_surname VARCHAR(45),
     education VARCHAR(14),
 	seniority VARCHAR(27),

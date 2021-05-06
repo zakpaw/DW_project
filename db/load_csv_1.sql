@@ -1,3 +1,5 @@
+USE AgencyData;
+
 BULK INSERT Hotel
 FROM '/home/db/data/data_Hotel1.csv'
 WITH (FIRSTROW = 2,

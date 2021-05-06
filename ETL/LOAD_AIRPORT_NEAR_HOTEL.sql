@@ -1,8 +1,8 @@
 USE Agency_DW
-
 go
 
-
+DELETE FROM AirportNearHotel;
+GO
 CREATE VIEW HotelAirportTemps 
 AS SELECT
 	DW1.hotel_ID,

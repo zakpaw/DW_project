@@ -125,7 +125,7 @@ def main():
                 else:
                     tables[tab](fake_data, fake, id + DB_entity.LENGTH * period)
                 
-            path = os.path.join(HOME_DIR, "db", "load_csv.sql")
+            path = os.path.join(HOME_DIR, "db", f"load_csv_{period}.sql")
 
             if (tab == next(iter(tables))) and (period == 0):
                 f = open(path, "w")

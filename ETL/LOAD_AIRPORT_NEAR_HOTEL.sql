@@ -1,8 +1,8 @@
 USE Agency_DW
+
 go
 
-DELETE FROM AirportNearHotel;
-GO
+
 CREATE VIEW HotelAirportTemps 
 AS SELECT
 	DW1.hotel_ID,
@@ -20,9 +20,7 @@ GO
 MERGE INTO AirportNearHotel as TT
 	USING HotelAirportTemps as ST
 		ON TT.hotel_ID = ST.hotel_ID AND
-		   TT.airport_ID = ST.airport_ID AND
-		   TT.distance = ST.distance AND 
-		   TT.travelled_time = ST.travelled_time
+		   TT.airport_ID = ST.airport_ID
 			WHEN Not Matched
 				THEN
 					INSERT
@@ -34,4 +32,3 @@ MERGE INTO AirportNearHotel as TT
 					);
 
 DROP VIEW HotelAirportTemps;
-

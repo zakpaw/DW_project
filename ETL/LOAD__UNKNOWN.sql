@@ -34,5 +34,5 @@ SET IDENTITY_INSERT LocalAirport OFF;
 SET IDENTITY_INSERT Employee ON;  
 GO 
 INSERT INTO Employee (employee_ID, travel_agency_ID, PESEL, name_surname, education, seniority, is_active) 
-VALUES (-1, NULL, -1, 'UNKNOWN', NULL, NULL, 1)
+VALUES (-1, NULL, 'UNKNOWN', 'UNKNOWN', NULL, NULL, 1)
 SET IDENTITY_INSERT Employee OFF;  

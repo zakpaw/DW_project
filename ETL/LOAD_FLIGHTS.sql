@@ -52,10 +52,7 @@ MERGE INTO Flights as TT
 		TT.local_airport_ID = ST.local_airport_ID AND 
 		TT.destination_airport_ID = ST.destination_airport_ID AND
 		TT.flight_departure_start_ID = ST.flight_departure_start_ID AND
-		TT.flight_departure_end_ID = ST.flight_departure_end_ID AND
-		TT.flight_duration = ST.flight_duration AND 
-		TT.cost = ST.cost AND 
-		TT.airline_discount = ST.airline_discount
+		TT.flight_departure_end_ID = ST.flight_departure_end_ID 
 			WHEN Not Matched
 				THEN
 					INSERT (airline_ID, local_airport_ID, destination_airport_ID, flight_departure_start_ID, flight_departure_end_ID, flight_duration, cost, airline_discount)

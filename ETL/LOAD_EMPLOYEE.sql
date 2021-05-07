@@ -69,7 +69,7 @@ MERGE INTO Employee as TT
 				UPDATE
 				SET TT.is_active = 0
 			WHEN Not Matched BY Source
-			AND TT.PESEL != -1 
+			AND TT.PESEL != 'UNKNOWN'
 			THEN
 				UPDATE
 				SET TT.is_active = 0
@@ -103,9 +103,9 @@ INSERT INTO Employee(
 		is_active
 	FROM Employee;
 
-UPDATE Agency_DW.dbo.Employee 
-SET education = 'Master'
-WHERE employee_ID = -1;
+--UPDATE Agency_DW.dbo.Employee 
+--SET PESEL = '01234566781'
+--WHERE PESEL = 90280325631;
 
 -- SELECT * FROM Employee
 -- ORDER BY name_surname

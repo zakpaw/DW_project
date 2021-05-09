@@ -1,4 +1,3 @@
-# dont forget -p 1433:1433
 FROM mcr.microsoft.com/mssql/server:2019-latest AS DW
 
 ENV ACCEPT_EULA=Y
@@ -12,5 +11,3 @@ EXPOSE 1433
 COPY . /home
 
 WORKDIR /home
-
-# CMD ["/bin/bash", "./scripts/create_load.sh"]

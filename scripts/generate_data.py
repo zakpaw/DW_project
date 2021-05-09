@@ -12,7 +12,7 @@ HOME_DIR = Path(os.getcwd()).parent
 
 
 class DB_entity(object):
-    LENGTH = 1000
+    LENGTH = 10000
     T = 0
     def __init__(self, name:str, data:dict):
         self.name = name
@@ -84,7 +84,7 @@ def agencyExcel(table: dict, fake: object, id: int)->dict:
 def agencyNetworkExcel(table: dict, fake: object, id: int)->dict:
     table["agencyID"].append(id)
     table["employeeID"].append(id)
-    table["PESEL"].append(random.randint(10000000000, 99999999999))
+    table["PESEL"].append(str(random.randint(10000000000, 99999999999)))
     table["Emp Name"].append(names[id])
     table["Emp Surname"].append(surnames[id])
     table["Date of Birth"].append(fake.date_of_birth(minimum_age=18, maximum_age=65))

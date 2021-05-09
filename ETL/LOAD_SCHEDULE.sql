@@ -157,5 +157,5 @@ DROP VIEW SchedulingTemps;
 DROP TABLE Agency_DW.dbo.EmpTemp;
 DROP VIEW FlightsStartTemps;
 DROP VIEW FlightEndTemps;
-SELECT * FROM TripScheduling
+-- SELECT * FROM TripScheduling
 

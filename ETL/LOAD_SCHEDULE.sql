@@ -17,6 +17,7 @@ JOIN Airline AS DW2 ON DB4.name = DW2.airline_name
 JOIN Time AS DW3 ON DB3.departure_time = DW3.hour AND DW3.minute = 0;
 GO
 
+
 CREATE VIEW HotelStartTemps
 AS SELECT
 	DW1.time_ID AS 'hotel_start_time_ID',
@@ -84,9 +85,8 @@ AS SELECT
 		AND DW2.month = DATENAME(month,DB2.end_date);
 GO
 
-
 CREATE VIEW SchedulingTemps
-AS SELECT
+AS SELECT DISTINCT
 	DW5.flight_ID,
 	DW1.employee_ID,
 	DW3.hotel_ID,
@@ -157,5 +157,5 @@ DROP VIEW SchedulingTemps;
 DROP TABLE Agency_DW.dbo.EmpTemp;
 DROP VIEW FlightsStartTemps;
 DROP VIEW FlightEndTemps;
--- SELECT * FROM TripScheduling
+SELECT * FROM TripScheduling
 

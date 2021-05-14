@@ -1,0 +1,66 @@
+
+// QUERY1 Which employee creates trips with the lowest OTW? 
+
+SELECT {[Measures].[Average OTW]} ON COLUMNS,
+	NON EMPTY
+	BOTTOMCOUNT([Employee].[Name Surname].[Name Surname], 3, [Measures].[Average OTW]) ON ROWS
+	FROM [Agency DW]
+
+// QUERY2  Which employees improve the OTW of their trips over time?   
+
+
+
+
+//QUERY3  Compare OTW of top 3 best and top 3 worst employees profit wise.
+
+SELECT{[Measures].[Average Profit]} ON COLUMNS, //trzeba by³oby rodzieliæ ich na dwie grupy ale nie mam takich umiejêtnoœci
+	NON EMPTY
+	{BOTTOMCOUNT([Employee].[Name Surname].[Name Surname], 3, [Measures].[Average Profit]),
+	TOPCOUNT([Employee].[Name Surname].[Name Surname], 3, [Measures].[Average Profit]) }ON ROWS 
+	FROM [Agency DW]
+
+
+//QUERY 4 Compare the profit brought by each employee.
+
+SELECT{[Measures].[Sum of Profit]} ON COLUMNS,
+	NON EMPTY
+	[Employee].[Name Surname].[Name Surname] ON ROWS 
+	FROM [Agency DW]
+
+
+//QUERY5  Compare the profit brought by an employee in comparison to the previous time period.
+//nie dzia³a ale jakoœ tak powinno byæ xd
+
+WITH MEMBER [Prev month amount] AS '(PARALLELPERIOD([Creation Date].[Date Hierarchy].[Month]
+, 1, [Creation Date].[Date Hierarchy].CurrentMember), [Measures].[Sum of Profit])'
+SELECT CrossJoin([Creation Date].[Date Hierarchy].[Year].[2021].[February],
+[Employee].[Name Surname].Members) ON ROWS,
+{[Measures].[Sum of Profit], [Prev month amount]} ON COLUMNS
+FROM [Agency DW];
+
+//QUERY6  Which airline flights to the airports no further than 50km on average from the befriended hotels in a given country?
+
+
+
+//QUERY7  From which airlines did we buy the most tickets? 
+
+
+
+
+//QUERY8  Which airline offered the highest average discount?
+
+SELECT {[Measures].[Average airline discount]} ON COLUMNS,
+	NON EMPTY
+	TOPCOUNT([Airline].[Airline Name].[Airline Name], 3,[Measures].[Average airline discount]) ON ROWS
+	FROM [Agency DW] //COŒ musi byæ nie tak chyba z 'avarage airline dicsount' w visualu boo wychodzi jako inf
+
+
+//QUERY9  Which airline covered all top 10 most popular traveling destinations (most popular destinations that were taken into the offers)?
+
+
+//QUERY10  Which airline had the lowest average cost of an hour of flight?
+
+SELECT {[Measures].[Average Cost of Hour of Flights]} ON COLUMNS,
+	NON EMPTY
+	BOTTOMCOUNT([Airline].[Airline Name].[Airline Name], 3, [Measures].[Average Cost of Hour of Flights]) ON ROWS
+	FROM [Agency DW]

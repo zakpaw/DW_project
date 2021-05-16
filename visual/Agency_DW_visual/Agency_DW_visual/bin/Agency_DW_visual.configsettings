@@ -6,8 +6,8 @@
         <ConnectionString>Provider=SQLNCLI11.1;Data Source=127.0.0.1;Persist Security Info=True;Password=;User ID=;Initial Catalog=Agency_DW</ConnectionString>
         <ImpersonationInfo>
           <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
-          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Weronika</Account>
-          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">zakpaw36@gmail.com</Account>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>
     </DataSources>
@@ -65,6 +65,22 @@
             <Partitions>
               <Partition>
                 <ID>Trip Scheduling</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Hotel</ID>
+            <Partitions>
+              <Partition>
+                <ID>Hotel</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Destination Airport</ID>
+            <Partitions>
+              <Partition>
+                <ID>Destination Airport</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>

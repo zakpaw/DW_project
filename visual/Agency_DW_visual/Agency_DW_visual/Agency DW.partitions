@@ -1,17 +1,17 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="84614834-e345-430f-8f4f-1c99575cf17e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b6e038ed-c569-428f-9e49-5522cfcf3dad" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Agency DW</ID>
   <MeasureGroups>
     <MeasureGroup>
       <ID>Airport Near Hotel</ID>
       <Partitions>
-        <Partition dwd:design-time-name="d5bef89b-4eb4-47e1-bf89-f0d646b1e84e">
+        <Partition dwd:design-time-name="e0f55a97-2875-4aa5-a0e7-551962e9501b">
           <ID>Airport Near Hotel</ID>
           <Name>Airport Near Hotel</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="7b7e96d7-7bd9-4c5a-928e-8bcbb0d3595c">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="d8fb0520-9c0a-4f4d-be1f-4b1be3b3b08d">
             <DataSourceViewID>Agency DW</DataSourceViewID>
             <TableID>dbo_AirportNearHotel</TableID>
           </Source>
@@ -24,14 +24,14 @@
     <MeasureGroup>
       <ID>Flights</ID>
       <Partitions>
-        <Partition dwd:design-time-name="331aa0f3-c396-4165-a2ed-9dfd56d49916">
+        <Partition dwd:design-time-name="7762471f-a8cb-41a4-a688-044f0d0ef14a">
           <ID>Flights</ID>
           <Name>Flights</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="67ad7e2e-d7b7-4a75-a033-5f43e73e94e5">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="6318d1ec-6635-416b-adc2-f068f72fe0bb">
             <DataSourceViewID>Agency DW</DataSourceViewID>
             <TableID>dbo_Flights</TableID>
           </Source>
@@ -44,16 +44,56 @@
     <MeasureGroup>
       <ID>Trip Scheduling</ID>
       <Partitions>
-        <Partition dwd:design-time-name="e2b77ad6-68d7-480b-8c45-2fad20a9bec0">
+        <Partition dwd:design-time-name="71d54cf9-bfb7-42d9-85e7-7c4724c8d6d6">
           <ID>Trip Scheduling</ID>
           <Name>Trip Scheduling</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c0afcdb5-c64b-4bb1-aafd-117695b42656">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b359645a-24d3-4837-899a-29cd11551680">
             <DataSourceViewID>Agency DW</DataSourceViewID>
             <TableID>dbo_TripScheduling</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Hotel</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="1e640787-6dd8-4377-a30c-68d3908086d2">
+          <ID>Hotel</ID>
+          <Name>Hotel</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="47cb63f1-47eb-43d9-ab1a-892c6bbe6a19">
+            <DataSourceViewID>Agency DW</DataSourceViewID>
+            <TableID>dbo_Hotel</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Destination Airport</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="ef465c2c-0173-4fb3-a0c0-88405b31625d">
+          <ID>Destination Airport</ID>
+          <Name>Destination Airport</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="44e51cca-8566-4c9d-85cb-bd463612b84d">
+            <DataSourceViewID>Agency DW</DataSourceViewID>
+            <TableID>dbo_DestinationAirport</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>

@@ -1,66 +1,93 @@
-
 // QUERY1 Which employee creates trips with the lowest OTW? 
 
-SELECT {[Measures].[Average OTW]} ON COLUMNS,
-	NON EMPTY
-	BOTTOMCOUNT([Employee].[Name Surname].[Name Surname], 3, [Measures].[Average OTW]) ON ROWS
-	FROM [Agency DW]
+SELECT NON EMPTY {[Measures].[Average OTW]} ON COLUMNS,
+BOTTOMCOUNT(NONEMPTY([Employee].[Name Surname].[Name Surname], [Measures].[Average OTW]), 1, [Measures].[Average OTW] ) ON ROWS
+FROM [Agency DW]
+
 
 // QUERY2  Which employees improve the OTW of their trips over time?   
+// Tutaj bedzie chyba problem bo nie ma danych z miesiaca na miesiac
+
+SELECT {([Creation Date].[Year].[2020],[Creation Date].[Month].[Month], [Measures].[OTW])} on rows,
+NON EMPTY
+       {([Employee].[Name Surname].[Name Surname])} ON COLUMNS
+FROM [Agency DW]
 
 
+//QUERY3  Compare average OTW of top 3 best and top 3 worst employees profit wise.
 
-
-//QUERY3  Compare OTW of top 3 best and top 3 worst employees profit wise.
-
-SELECT{[Measures].[Average Profit]} ON COLUMNS, //trzeba by³oby rodzieliæ ich na dwie grupy ale nie mam takich umiejêtnoœci
-	NON EMPTY
-	{BOTTOMCOUNT([Employee].[Name Surname].[Name Surname], 3, [Measures].[Average Profit]),
-	TOPCOUNT([Employee].[Name Surname].[Name Surname], 3, [Measures].[Average Profit]) }ON ROWS 
-	FROM [Agency DW]
+SELECT{[Measures].[Average Profit], [Measures].[Average OTW]} ON COLUMNS,
+NON EMPTY {BOTTOMCOUNT([Employee].[Name Surname].[Name Surname], 3, [Measures].[Average Profit]),
+TOPCOUNT([Employee].[Name Surname].[Name Surname], 3, [Measures].[Average Profit]) } ON ROWS 
+FROM [Agency DW];
 
 
 //QUERY 4 Compare the profit brought by each employee.
 
-SELECT{[Measures].[Sum of Profit]} ON COLUMNS,
-	NON EMPTY
-	[Employee].[Name Surname].[Name Surname] ON ROWS 
-	FROM [Agency DW]
+SELECT {[Measures].[Sum of Profit]} ON COLUMNS,
+NON EMPTY [Employee].[Name Surname].[Name Surname] ON ROWS 
+FROM [Agency DW]
 
 
 //QUERY5  Compare the profit brought by an employee in comparison to the previous time period.
-//nie dzia³a ale jakoœ tak powinno byæ xd
 
-WITH MEMBER [Prev month amount] AS '(PARALLELPERIOD([Creation Date].[Date Hierarchy].[Month]
-, 1, [Creation Date].[Date Hierarchy].CurrentMember), [Measures].[Sum of Profit])'
-SELECT CrossJoin([Creation Date].[Date Hierarchy].[Year].[2021].[February],
-[Employee].[Name Surname].Members) ON ROWS,
-{[Measures].[Sum of Profit], [Prev month amount]} ON COLUMNS
-FROM [Agency DW];
-
-//QUERY6  Which airline flights to the airports no further than 50km on average from the befriended hotels in a given country?
+SELECT { [Creation Date].[Year].[Year].ALLMEMBERS } ON COLUMNS,
+NON EMPTY { ([Employee].[Name Surname].[Name Surname], [Measures].[Sum of Profit]) }
+DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM ( SELECT ( { [Creation Date].[Year].&[2019], [Creation Date].[Year].&[2020] } ) ON COLUMNS 
+		FROM [Agency DW])
 
 
-
-//QUERY7  From which airlines did we buy the most tickets? 
-
-
-
-
-//QUERY8  Which airline offered the highest average discount?
-
-SELECT {[Measures].[Average airline discount]} ON COLUMNS,
-	NON EMPTY
-	TOPCOUNT([Airline].[Airline Name].[Airline Name], 3,[Measures].[Average airline discount]) ON ROWS
-	FROM [Agency DW] //COŒ musi byæ nie tak chyba z 'avarage airline dicsount' w visualu boo wychodzi jako inf
+//QUERY6 Which airline flights to the airports no further than 600km on average from the befriended hotels in a given country?
+ 
+SELECT NON EMPTY { ([Airline].[Airline Name].[Airline Name].ALLMEMBERS )} ON COLUMNS,
+ NON EMPTY {ORDER(FILTER([Destination Airport].[Airport Name].CHILDREN, [Measures].[Average Distance] < 600), 
+ [Measures].[Average Distance], DESC)} ON ROWS
+ FROM [Agency DW]
+ WHERE ( [Hotel].[Is Befriended].&[befriended])
 
 
-//QUERY9  Which airline covered all top 10 most popular traveling destinations (most popular destinations that were taken into the offers)?
+//QUERY7  What are the top 5 airlines from which we buy the most tickets?
+
+SELECT NON EMPTY { [Measures].[Flights Count] } ON COLUMNS,
+NON EMPTY { topcount([Airline].[Airline Name].[Airline Name].ALLMEMBERS, 5, [Measures].[Flights Count]) } 
+DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM [Agency DW]
 
 
-//QUERY10  Which airline had the lowest average cost of an hour of flight?
+//QUERY8  Which 5 airlines offer the highest average discount?
+
+WITH MEMBER [Average Airline Discount in %] AS 
+[Measures].[Average airline discount] * 100 , format_string="##.00%"
+SELECT {[Average Airline Discount in %]} ON COLUMNS,
+NON EMPTY TOPCOUNT([Airline].[Airline Name].[Airline Name], 5, [Measures].[Average airline discount]) ON ROWS
+FROM [Agency DW]
+
+
+// QUERY9  Which airline and how many times covered all top 5 most popular traveling destinations?
+ 
+SELECT NON EMPTY { [Measures].[City Count] } ON COLUMNS,
+NON EMPTY {topcount([Destination Airport].[City].[City].ALLMEMBERS, 5, [Measures].[City Count]) }
+DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM [Agency DW];
+
+SELECT NON EMPTY { [Measures].[City Count] } ON COLUMNS,
+NON EMPTY { ([Airline].[Airline Name].[Airline Name].ALLMEMBERS * [Destination Airport].[City].[City].ALLMEMBERS ) }
+DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM ( SELECT ( { [Destination Airport].[City].&[New Michael],
+			   [Destination Airport].[City].&[North James],
+			   [Destination Airport].[City].&[West Michael],
+			   [Destination Airport].[City].&[Christopherborough],
+			   [Destination Airport].[City].&[East Micheal] } ) ON COLUMNS
+		FROM [Agency DW]);
+
+
+//QUERY10  Which top 3 airline had the lowest average cost of an hour of flight?
 
 SELECT {[Measures].[Average Cost of Hour of Flights]} ON COLUMNS,
-	NON EMPTY
-	BOTTOMCOUNT([Airline].[Airline Name].[Airline Name], 3, [Measures].[Average Cost of Hour of Flights]) ON ROWS
-	FROM [Agency DW]
+NON EMPTY BOTTOMCOUNT(
+	nonempty([Airline].[Airline Name].[Airline Name], [Measures].[Average Cost of Hour of Flights]),
+	3,
+	[Measures].[Average Cost of Hour of Flights]
+	) ON ROWS
+FROM [Agency DW]

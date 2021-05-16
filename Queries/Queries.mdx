@@ -22,9 +22,11 @@ TOPCOUNT([Employee].[Name Surname].[Name Surname], 3, [Measures].[Average Profit
 FROM [Agency DW];
 
 
-//QUERY 4 Compare the profit brought by each employee.
+//QUERY 4 Compare the profit brought by each employee and what was the best otw they achived.
 
-SELECT {[Measures].[Sum of Profit]} ON COLUMNS,
+WITH MEMBER [Best OTW] AS
+MIN([Measures].[OTW])
+SELECT {[Measures].[Sum of Profit], [Best OTW] } ON COLUMNS,
 NON EMPTY [Employee].[Name Surname].[Name Surname] ON ROWS 
 FROM [Agency DW]
 

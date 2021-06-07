@@ -96,6 +96,7 @@
           <ID>Airport ID</ID>
           <Name>Airport ID</Name>
           <Usage>Key</Usage>
+          <EstimatedCount>5000</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
@@ -259,6 +260,7 @@
           <ID>Hotel ID</ID>
           <Name>Hotel ID</Name>
           <Usage>Key</Usage>
+          <EstimatedCount>10000</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
@@ -325,6 +327,7 @@
         <Attribute>
           <ID>Country</ID>
           <Name>Country</Name>
+          <EstimatedCount>244</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>WChar</DataType>
@@ -390,9 +393,9 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1750" scrolltop="-5038" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7560" y="17992" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1750" scrolltop="-5038" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6541" y="12023" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
-                  <ddsxmlobjectstreamwrapper binary="010000009001153e0100065461686f6d61" />
+                  <ddsxmlobjectstreamwrapper binary="01ee00009001b0300100065461686f6d61" />
                 </font>
                 <mouseicon>
                   <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -401,7 +404,7 @@
               <layoutmanager>
                 <ddsxmlobj />
               </layoutmanager>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Time" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Time" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00009b070000" />
                 </control>
@@ -466,6 +469,7 @@
           <ID>Time ID</ID>
           <Name>Time ID</Name>
           <Usage>Key</Usage>
+          <EstimatedCount>2880</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
@@ -494,6 +498,7 @@
           <ID>Hour</ID>
           <Name>Hour</Name>
           <Type>Hours</Type>
+          <EstimatedCount>24</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
@@ -628,6 +633,7 @@
           <ID>Airport ID</ID>
           <Name>Airport ID</Name>
           <Usage>Key</Usage>
+          <EstimatedCount>5000</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
@@ -717,9 +723,9 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1750" scrolltop="-5217" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7560" y="17992" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1750" scrolltop="-5217" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6541" y="12023" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
-                  <ddsxmlobjectstreamwrapper binary="010000009001153e0100065461686f6d61" />
+                  <ddsxmlobjectstreamwrapper binary="01ee00009001b0300100065461686f6d61" />
                 </font>
                 <mouseicon>
                   <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -728,7 +734,7 @@
               <layoutmanager>
                 <ddsxmlobj />
               </layoutmanager>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Airline" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Airline" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000034060000" />
                 </control>
@@ -792,6 +798,7 @@
           <ID>Airline ID</ID>
           <Name>Airline ID</Name>
           <Usage>Key</Usage>
+          <EstimatedCount>10000</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
@@ -815,6 +822,7 @@
         <Attribute>
           <ID>Airline Name</ID>
           <Name>Airline Name</Name>
+          <EstimatedCount>10000</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>WChar</DataType>
@@ -938,6 +946,7 @@
           <ID>Flight ID</ID>
           <Name>Flight ID</Name>
           <Usage>Key</Usage>
+          <EstimatedCount>74452</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
@@ -1235,6 +1244,7 @@
           <ID>Date ID</ID>
           <Name>Date ID</Name>
           <Usage>Key</Usage>
+          <EstimatedCount>30684</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
@@ -1282,6 +1292,7 @@
           <ID>Year</ID>
           <Name>Year</Name>
           <Type>Years</Type>
+          <EstimatedCount>43</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
@@ -1448,6 +1459,7 @@
           <ID>Employee ID</ID>
           <Name>Employee ID</Name>
           <Usage>Key</Usage>
+          <EstimatedCount>16039</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
@@ -1507,6 +1519,7 @@
         <Attribute>
           <ID>PESEL</ID>
           <Name>PESEL</Name>
+          <EstimatedCount>10000</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>WChar</DataType>
@@ -1523,6 +1536,7 @@
         <Attribute>
           <ID>Name Surname</ID>
           <Name>Name Surname</Name>
+          <EstimatedCount>9298</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>WChar</DataType>
@@ -1645,6 +1659,7 @@
           <ID>Agency ID</ID>
           <Name>Agency ID</Name>
           <Usage>Key</Usage>
+          <EstimatedCount>9996</EstimatedCount>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
@@ -1739,7 +1754,7 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="58" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2571" scrolltop="782" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="19942" y="17992" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="58" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2571" scrolltop="-5000" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="30208" y="20713" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
                   <ddsxmlobjectstreamwrapper binary="010000009001153e0100065461686f6d61" />
                 </font>
@@ -2224,7 +2239,7 @@
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-          <Value>782</Value>
+          <Value>-5000</Value>
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -2393,6 +2408,7 @@
             </Attribute>
             <Attribute>
               <AttributeID>Airline Name</AttributeID>
+              <AggregationUsage>Full</AggregationUsage>
             </Attribute>
           </Attributes>
         </Dimension>
@@ -2538,6 +2554,7 @@
             </Attribute>
             <Attribute>
               <AttributeID>Name Surname</AttributeID>
+              <AggregationUsage>Full</AggregationUsage>
             </Attribute>
             <Attribute>
               <AttributeID>Education</AttributeID>
@@ -2677,7 +2694,7 @@
               </Source>
             </Measure>
           </Measures>
-          <StorageMode>Molap</StorageMode>
+          <StorageMode>Holap</StorageMode>
           <ProcessingMode>Regular</ProcessingMode>
           <Dimensions>
             <Dimension xsi:type="RegularMeasureGroupDimension">
@@ -2729,11 +2746,33 @@
                 <DataSourceViewID>Agency DW</DataSourceViewID>
                 <TableID>dbo_AirportNearHotel</TableID>
               </Source>
-              <StorageMode>Molap</StorageMode>
+              <StorageMode>Holap</StorageMode>
               <CurrentStorageMode>Molap</CurrentStorageMode>
               <ProcessingMode>Regular</ProcessingMode>
+              <ProactiveCaching>
+                <SilenceInterval>PT0S</SilenceInterval>
+                <Latency>PT0S</Latency>
+                <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                <Enabled>true</Enabled>
+                <AggregationStorage>MolapOnly</AggregationStorage>
+                <Source xsi:type="ProactiveCachingInheritedBinding">
+                  <NotificationTechnique>Server</NotificationTechnique>
+                </Source>
+              </ProactiveCaching>
             </Partition>
           </Partitions>
+          <ProactiveCaching>
+            <SilenceInterval>PT0S</SilenceInterval>
+            <Latency>PT0S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Enabled>true</Enabled>
+            <AggregationStorage>MolapOnly</AggregationStorage>
+            <Source xsi:type="ProactiveCachingInheritedBinding">
+              <NotificationTechnique>Server</NotificationTechnique>
+            </Source>
+          </ProactiveCaching>
         </MeasureGroup>
         <MeasureGroup>
           <ID>Flights</ID>
@@ -2826,6 +2865,7 @@
             </Measure>
           </Measures>
           <StorageMode>Molap</StorageMode>
+          <EstimatedRows>74452</EstimatedRows>
           <ProcessingMode>Regular</ProcessingMode>
           <Dimensions>
             <Dimension xsi:type="DegenerateMeasureGroupDimension">
@@ -2954,11 +2994,412 @@
                 <DataSourceViewID>Agency DW</DataSourceViewID>
                 <TableID>dbo_Flights</TableID>
               </Source>
-              <StorageMode>Molap</StorageMode>
+              <StorageMode>Holap</StorageMode>
               <CurrentStorageMode>Molap</CurrentStorageMode>
               <ProcessingMode>Regular</ProcessingMode>
+              <ProactiveCaching>
+                <SilenceInterval>PT0S</SilenceInterval>
+                <Latency>PT0S</Latency>
+                <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                <Enabled>true</Enabled>
+                <AggregationStorage>MolapOnly</AggregationStorage>
+                <Source xsi:type="ProactiveCachingInheritedBinding">
+                  <NotificationTechnique>Server</NotificationTechnique>
+                </Source>
+              </ProactiveCaching>
+              <EstimatedRows>74452</EstimatedRows>
+              <AggregationDesignID>AggregationDesign</AggregationDesignID>
             </Partition>
           </Partitions>
+          <AggregationDesigns>
+            <AggregationDesign>
+              <ID>AggregationDesign</ID>
+              <Name>AggregationDesign</Name>
+              <CreatedTimestamp>2021-05-21T11:47:49.573333Z</CreatedTimestamp>
+              <LastSchemaUpdate>2021-05-21T11:47:49.573333Z</LastSchemaUpdate>
+              <EstimatedRows>74452</EstimatedRows>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Flights</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Flight ID</AttributeID>
+                      <EstimatedCount>74452</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Flight Departure End ID</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Flight Departure Start ID</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Local Airport ID</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Destination Airport ID</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Flight Duration</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Cost</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Airline Discount</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Airline ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Flight Departure End</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time ID</AttributeID>
+                      <EstimatedCount>2880</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Hour</AttributeID>
+                      <EstimatedCount>24</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Minute</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Flight Departure Start</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time ID</AttributeID>
+                      <EstimatedCount>2880</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Hour</AttributeID>
+                      <EstimatedCount>24</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Minute</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Local Airport</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Airport ID</AttributeID>
+                      <EstimatedCount>5000</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Airport Name</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>City</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Destination Airport</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Airport ID</AttributeID>
+                      <EstimatedCount>5000</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Airport Name</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>City</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Airline</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Airline ID</AttributeID>
+                      <EstimatedCount>10000</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Airline Name</AttributeID>
+                      <EstimatedCount>10000</EstimatedCount>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+              <Aggregations>
+                <Aggregation>
+                  <ID>Aggregation 0</ID>
+                  <Name>Aggregation 0</Name>
+                  <Dimensions>
+                    <Dimension>
+                      <CubeDimensionID>Flights</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure End</CubeDimensionID>
+                      <Attributes>
+                        <Attribute>
+                          <AttributeID>Hour</AttributeID>
+                        </Attribute>
+                      </Attributes>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure Start</CubeDimensionID>
+                      <Attributes>
+                        <Attribute>
+                          <AttributeID>Hour</AttributeID>
+                        </Attribute>
+                      </Attributes>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Local Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Destination Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Airline</CubeDimensionID>
+                    </Dimension>
+                  </Dimensions>
+                </Aggregation>
+                <Aggregation>
+                  <ID>Aggregation 1</ID>
+                  <Name>Aggregation 1</Name>
+                  <Dimensions>
+                    <Dimension>
+                      <CubeDimensionID>Flights</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure End</CubeDimensionID>
+                      <Attributes>
+                        <Attribute>
+                          <AttributeID>Time ID</AttributeID>
+                        </Attribute>
+                      </Attributes>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure Start</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Local Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Destination Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Airline</CubeDimensionID>
+                    </Dimension>
+                  </Dimensions>
+                </Aggregation>
+                <Aggregation>
+                  <ID>Aggregation 2</ID>
+                  <Name>Aggregation 2</Name>
+                  <Dimensions>
+                    <Dimension>
+                      <CubeDimensionID>Flights</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure End</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure Start</CubeDimensionID>
+                      <Attributes>
+                        <Attribute>
+                          <AttributeID>Time ID</AttributeID>
+                        </Attribute>
+                      </Attributes>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Local Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Destination Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Airline</CubeDimensionID>
+                    </Dimension>
+                  </Dimensions>
+                </Aggregation>
+                <Aggregation>
+                  <ID>Aggregation 3</ID>
+                  <Name>Aggregation 3</Name>
+                  <Dimensions>
+                    <Dimension>
+                      <CubeDimensionID>Flights</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure End</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure Start</CubeDimensionID>
+                      <Attributes>
+                        <Attribute>
+                          <AttributeID>Hour</AttributeID>
+                        </Attribute>
+                      </Attributes>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Local Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Destination Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Airline</CubeDimensionID>
+                    </Dimension>
+                  </Dimensions>
+                </Aggregation>
+                <Aggregation>
+                  <ID>Aggregation 4</ID>
+                  <Name>Aggregation 4</Name>
+                  <Dimensions>
+                    <Dimension>
+                      <CubeDimensionID>Flights</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure End</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure Start</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Local Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Destination Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Airline</CubeDimensionID>
+                    </Dimension>
+                  </Dimensions>
+                </Aggregation>
+                <Aggregation>
+                  <ID>Aggregation 5</ID>
+                  <Name>Aggregation 5</Name>
+                  <Dimensions>
+                    <Dimension>
+                      <CubeDimensionID>Flights</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure End</CubeDimensionID>
+                      <Attributes>
+                        <Attribute>
+                          <AttributeID>Hour</AttributeID>
+                        </Attribute>
+                      </Attributes>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure Start</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Local Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Destination Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Airline</CubeDimensionID>
+                    </Dimension>
+                  </Dimensions>
+                </Aggregation>
+                <Aggregation>
+                  <ID>Aggregation 6</ID>
+                  <Name>Aggregation 6</Name>
+                  <Dimensions>
+                    <Dimension>
+                      <CubeDimensionID>Flights</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure End</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure Start</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Local Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Destination Airport</CubeDimensionID>
+                      <Attributes>
+                        <Attribute>
+                          <AttributeID>Airport ID</AttributeID>
+                        </Attribute>
+                      </Attributes>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Airline</CubeDimensionID>
+                    </Dimension>
+                  </Dimensions>
+                </Aggregation>
+                <Aggregation>
+                  <ID>Aggregation 7</ID>
+                  <Name>Aggregation 7</Name>
+                  <Dimensions>
+                    <Dimension>
+                      <CubeDimensionID>Flights</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure End</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure Start</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Local Airport</CubeDimensionID>
+                      <Attributes>
+                        <Attribute>
+                          <AttributeID>Airport ID</AttributeID>
+                        </Attribute>
+                      </Attributes>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Destination Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Airline</CubeDimensionID>
+                    </Dimension>
+                  </Dimensions>
+                </Aggregation>
+                <Aggregation>
+                  <ID>Aggregation 8</ID>
+                  <Name>Aggregation 8</Name>
+                  <Dimensions>
+                    <Dimension>
+                      <CubeDimensionID>Flights</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure End</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flight Departure Start</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Local Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Destination Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Airline</CubeDimensionID>
+                      <Attributes>
+                        <Attribute>
+                          <AttributeID>Airline ID</AttributeID>
+                        </Attribute>
+                      </Attributes>
+                    </Dimension>
+                  </Dimensions>
+                </Aggregation>
+              </Aggregations>
+            </AggregationDesign>
+          </AggregationDesigns>
         </MeasureGroup>
         <MeasureGroup>
           <ID>Trip Scheduling</ID>
@@ -3049,6 +3490,7 @@
             </Measure>
           </Measures>
           <StorageMode>Molap</StorageMode>
+          <EstimatedRows>42083</EstimatedRows>
           <ProcessingMode>Regular</ProcessingMode>
           <Dimensions>
             <Dimension xsi:type="RegularMeasureGroupDimension">
@@ -3291,11 +3733,374 @@
                 <DataSourceViewID>Agency DW</DataSourceViewID>
                 <TableID>dbo_TripScheduling</TableID>
               </Source>
-              <StorageMode>Molap</StorageMode>
+              <StorageMode>Holap</StorageMode>
               <CurrentStorageMode>Molap</CurrentStorageMode>
               <ProcessingMode>Regular</ProcessingMode>
+              <ProactiveCaching>
+                <SilenceInterval>PT0S</SilenceInterval>
+                <Latency>PT0S</Latency>
+                <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                <Enabled>true</Enabled>
+                <AggregationStorage>MolapOnly</AggregationStorage>
+                <Source xsi:type="ProactiveCachingInheritedBinding">
+                  <NotificationTechnique>Server</NotificationTechnique>
+                </Source>
+              </ProactiveCaching>
+              <EstimatedRows>42083</EstimatedRows>
+              <AggregationDesignID>AggregationDesign</AggregationDesignID>
             </Partition>
           </Partitions>
+          <AggregationDesigns>
+            <AggregationDesign>
+              <ID>AggregationDesign</ID>
+              <Name>AggregationDesign</Name>
+              <CreatedTimestamp>2021-05-21T11:48:39.613333Z</CreatedTimestamp>
+              <LastSchemaUpdate>2021-05-21T11:48:39.613333Z</LastSchemaUpdate>
+              <EstimatedRows>42083</EstimatedRows>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Hotel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Hotel ID</AttributeID>
+                      <EstimatedCount>10000</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Hotel Name</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>City</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Country</AttributeID>
+                      <EstimatedCount>244</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Is Befriended</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Flights</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Flight ID</AttributeID>
+                      <EstimatedCount>74452</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Flight Departure End ID</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Flight Departure Start ID</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Local Airport ID</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Destination Airport ID</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Flight Duration</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Cost</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Airline Discount</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Airline ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Creation Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date ID</AttributeID>
+                      <EstimatedCount>30684</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                      <EstimatedCount>43</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month No</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Hotel End Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date ID</AttributeID>
+                      <EstimatedCount>30684</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                      <EstimatedCount>43</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month No</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Hotel Start Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time ID</AttributeID>
+                      <EstimatedCount>2880</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Hour</AttributeID>
+                      <EstimatedCount>24</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Minute</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Hotel Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date ID</AttributeID>
+                      <EstimatedCount>30684</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                      <EstimatedCount>43</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month No</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Creation Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time ID</AttributeID>
+                      <EstimatedCount>2880</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Hour</AttributeID>
+                      <EstimatedCount>24</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Minute</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Employee ID</AttributeID>
+                      <EstimatedCount>16039</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Travel Agency ID</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>PESEL</AttributeID>
+                      <EstimatedCount>10000</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Name Surname</AttributeID>
+                      <EstimatedCount>9298</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Education</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Seniority</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Is Active</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Hotel End Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time ID</AttributeID>
+                      <EstimatedCount>2880</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Hour</AttributeID>
+                      <EstimatedCount>24</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Minute</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Flights - Flight Departure End</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time ID</AttributeID>
+                      <EstimatedCount>2880</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Hour</AttributeID>
+                      <EstimatedCount>24</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Minute</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Flights - Flight Departure Start</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time ID</AttributeID>
+                      <EstimatedCount>2880</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Hour</AttributeID>
+                      <EstimatedCount>24</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Minute</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Local Airport</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Airport ID</AttributeID>
+                      <EstimatedCount>5000</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Airport Name</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>City</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Destination Airport</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Airport ID</AttributeID>
+                      <EstimatedCount>5000</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Airport Name</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>City</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Travel Agency</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Agency ID</AttributeID>
+                      <EstimatedCount>9996</EstimatedCount>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Agency Name</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>City</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+              <Aggregations>
+                <Aggregation>
+                  <ID>Aggregation 0</ID>
+                  <Name>Aggregation 0</Name>
+                  <Dimensions>
+                    <Dimension>
+                      <CubeDimensionID>Hotel</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flights</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Creation Date</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Hotel End Date</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Hotel Start Time</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Hotel Start Date</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Creation Time</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Employee</CubeDimensionID>
+                      <Attributes>
+                        <Attribute>
+                          <AttributeID>Name Surname</AttributeID>
+                        </Attribute>
+                      </Attributes>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Hotel End Time</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flights - Flight Departure End</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Flights - Flight Departure Start</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Local Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Destination Airport</CubeDimensionID>
+                    </Dimension>
+                    <Dimension>
+                      <CubeDimensionID>Travel Agency</CubeDimensionID>
+                    </Dimension>
+                  </Dimensions>
+                </Aggregation>
+              </Aggregations>
+            </AggregationDesign>
+          </AggregationDesigns>
         </MeasureGroup>
         <MeasureGroup>
           <ID>Hotel</ID>
@@ -3352,9 +4157,20 @@
                 <DataSourceViewID>Agency DW</DataSourceViewID>
                 <TableID>dbo_Hotel</TableID>
               </Source>
-              <StorageMode>Molap</StorageMode>
+              <StorageMode>Holap</StorageMode>
               <CurrentStorageMode>Molap</CurrentStorageMode>
               <ProcessingMode>Regular</ProcessingMode>
+              <ProactiveCaching>
+                <SilenceInterval>PT0S</SilenceInterval>
+                <Latency>PT0S</Latency>
+                <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                <Enabled>true</Enabled>
+                <AggregationStorage>MolapOnly</AggregationStorage>
+                <Source xsi:type="ProactiveCachingInheritedBinding">
+                  <NotificationTechnique>Server</NotificationTechnique>
+                </Source>
+              </ProactiveCaching>
             </Partition>
           </Partitions>
         </MeasureGroup>
@@ -3414,9 +4230,20 @@
                 <DataSourceViewID>Agency DW</DataSourceViewID>
                 <TableID>dbo_DestinationAirport</TableID>
               </Source>
-              <StorageMode>Molap</StorageMode>
+              <StorageMode>Holap</StorageMode>
               <CurrentStorageMode>Molap</CurrentStorageMode>
               <ProcessingMode>Regular</ProcessingMode>
+              <ProactiveCaching>
+                <SilenceInterval>PT0S</SilenceInterval>
+                <Latency>PT0S</Latency>
+                <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                <Enabled>true</Enabled>
+                <AggregationStorage>MolapOnly</AggregationStorage>
+                <Source xsi:type="ProactiveCachingInheritedBinding">
+                  <NotificationTechnique>Server</NotificationTechnique>
+                </Source>
+              </ProactiveCaching>
             </Partition>
           </Partitions>
         </MeasureGroup>
@@ -3468,33 +4295,25 @@ VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Airport Near Hotel'; </Text>
       </MdxScripts>
       <Kpis>
         <Kpi>
-          <ID>KPI</ID>
-          <Name>OTW</Name>
-          <AssociatedMeasureGroupID>Trip Scheduling</AssociatedMeasureGroupID>
-          <Value>[Measures].[OTW]</Value>
-          <Goal>( KPIValue( "OTW" ), ParallelPeriod (
-[Creation Date].[Date Hierarchy].[Creation Date].[Hierarchy].[Month], 1,
-[Creation Date].[Date Hierarchy].CurrentMember ) ) * 1.006</Goal>
-          <Status>IIf (KPIVALUE( "OTW" ) &gt; KPIGoal("OTW"), 1, -1)</Status>
-          <Trend>IIf ( KPIValue( "OTW" ) &gt; ( KPIValue( "OTW" ), ParallelPeriod (
-[Creation Date].[Date Hierarchy].[Creation Date].[Hierarchy].[Month], 1,
-[Creation Date].[Date Hierarchy].CurrentMember ) ), 1, -1)</Trend>
-          <TrendGraphic>Standard Arrow</TrendGraphic>
-          <StatusGraphic>Gauge - Ascending</StatusGraphic>
-        </Kpi>
-        <Kpi>
           <ID>KPI 1</ID>
           <Name>Offers Sale</Name>
           <AssociatedMeasureGroupID>Trip Scheduling</AssociatedMeasureGroupID>
           <Value>[Measures].[Number of created offers]</Value>
-          <Goal>( KPIValue( "Offers Sale" ), ParallelPeriod (
-[Creation Date].[Date Hierarchy].[Month], 1,
-[Creation Date].[Date Hierarchy].CurrentMember ) ) * 1.004</Goal>
-          <Status>IIf (KPIVALUE( "Offers Sale" ) &gt; KPIGoal("Offers Sale"), 1, -1)</Status>
-          <Trend>IIf ( KPIValue( "Offers Sale" ) &gt; ( KPIValue( "Offers Sale" ), ParallelPeriod (
-[Creation Date].[Date Hierarchy].[Month], 1,
-[Creation Date].[Date Hierarchy].CurrentMember ) ), 1, -1)</Trend>
+          <Goal>(KPIValue("Offers Sale"), ParallelPeriod([Creation Date].[Month].[Month], 1, [Creation Date].[Month].CurrentMember)) * 1.04</Goal>
+          <Status>IIf(KPIVALUE("Offers Sale")&gt;KPIGoal("Offers Sale"), 1, -1)</Status>
+          <Trend>IIf(KPIValue("Offers Sale")&gt;(KPIValue("Offers Sale"),ParallelPeriod([Creation Date].[Month].[Month],1,[Creation Date].[Month].CurrentMember)),1,-1)</Trend>
           <TrendGraphic>Standard Arrow</TrendGraphic>
+          <StatusGraphic>Gauge - Ascending</StatusGraphic>
+        </Kpi>
+        <Kpi>
+          <ID>KPI 2</ID>
+          <Name>OTW</Name>
+          <AssociatedMeasureGroupID>Trip Scheduling</AssociatedMeasureGroupID>
+          <Value>[Measures].[OTW]</Value>
+          <Goal>(KPIValue("OTW"), ParallelPeriod([Creation Date].[Month].[Month], 1, [Creation Date].[Month].CurrentMember)) * 0.96</Goal>
+          <Status>IIf(KPIVALUE("OTW")&lt;KPIGoal("OTW"),1,-1)</Status>
+          <Trend>IIf(KPIValue("OTW")&lt;(KPIValue("OTW"),ParallelPeriod([Creation Date].[Month].[Month],1,[Creation Date].[Month].CurrentMember)),1,-1)</Trend>
+          <TrendGraphic>Status Arrow - Ascending</TrendGraphic>
           <StatusGraphic>Gauge - Ascending</StatusGraphic>
         </Kpi>
       </Kpis>

@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="92cd0497-6d54-4e92-85a8-71da11326e44" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c0d982cc-222a-404e-887b-e6e0faaa7730" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Employee</ID>
   <Name>Employee</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -68,51 +68,52 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="0c4e7a77-a2b2-4146-8b91-6c64d9bb1944">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="bfeb6ab4-2368-455e-a52c-4104843fd1b4">
     <DataSourceViewID>Agency DW</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="4f732cc9-9b67-43ef-8202-3809ce7bc0aa">
+  <ErrorConfiguration dwd:design-time-name="48c1acb8-490a-42ce-b63f-bc910e267720">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="4f2f84de-bd03-43cb-9cca-dc6967ae22c7">
+    <Attribute dwd:design-time-name="e56c1c39-9c39-42e9-83a0-439735668ac5">
       <ID>Employee ID</ID>
       <Name>Employee ID</Name>
       <Usage>Key</Usage>
+      <EstimatedCount>16039</EstimatedCount>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="d1c09059-9202-4f00-879a-05668b8c3f70">
+        <KeyColumn dwd:design-time-name="2ba3d2ba-9756-4cb9-a64e-452ae531feac">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="6d388677-c908-4d24-8d08-f87a12cd9ab8">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="455c2fa2-6dd2-4a40-a14c-6deed132cc76">
             <TableID>dbo_Employee</TableID>
             <ColumnID>employee_ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="703d53eb-2d53-46f6-b951-ed3e4d1ad888">
+        <AttributeRelationship dwd:design-time-name="cce04edf-b668-4c4b-aa55-20a0881e1bd3">
           <AttributeID>Travel Agency ID</AttributeID>
           <Name>Travel Agency ID</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="720db2a8-9249-442f-b6e3-63a2f3f7d1be">
+        <AttributeRelationship dwd:design-time-name="68c83f63-475d-4d62-b083-c1fc07d0dd9c">
           <AttributeID>PESEL</AttributeID>
           <Name>PESEL</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="dc62ff07-cd72-4141-add0-86b3f9daf439">
+        <AttributeRelationship dwd:design-time-name="d2944433-ceda-41d3-9d9b-6d7e08d2727c">
           <AttributeID>Name Surname</AttributeID>
           <Name>Name Surname</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="0563fdcd-6572-404e-8257-a99170695d8f">
+        <AttributeRelationship dwd:design-time-name="ffb68cce-bdb9-4cfd-9a36-b82f0167785d">
           <AttributeID>Education</AttributeID>
           <Name>Education</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="09837e71-62a4-4f7d-823b-16d333dd968d">
+        <AttributeRelationship dwd:design-time-name="e0763c11-8b8e-407e-a1b7-b541726c7db1">
           <AttributeID>Seniority</AttributeID>
           <Name>Seniority</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="752ac82a-9b40-4420-aa0d-39c7580b324c">
+        <AttributeRelationship dwd:design-time-name="431733f8-b4f7-44d6-aed4-19e62391438a">
           <AttributeID>Is Active</AttributeID>
           <Name>Is Active</Name>
         </AttributeRelationship>
@@ -121,13 +122,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="7d7e5407-f78c-4552-9b58-42de435d82e7">
+    <Attribute dwd:design-time-name="1297256c-8915-455a-814a-5cd922d78aa2">
       <ID>Travel Agency ID</ID>
       <Name>Travel Agency ID</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="bcd978b4-1913-41e9-89db-f734eb8965c7">
+        <KeyColumn dwd:design-time-name="8462b5a3-167c-4ef3-ab4e-e6adf1a2b547">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="1261d62b-40e9-4c61-910b-3c4ef489c29d">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="65eabb84-5dc6-4fc5-abb9-bd4b33149f3e">
             <TableID>dbo_Employee</TableID>
             <ColumnID>travel_agency_ID</ColumnID>
           </Source>
@@ -138,14 +139,15 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="46045eed-42c4-4872-801d-f7ad2c06c554">
+    <Attribute dwd:design-time-name="95fbc94a-e883-4e6b-85c9-3ab0f59b2ce4">
       <ID>PESEL</ID>
       <Name>PESEL</Name>
+      <EstimatedCount>10000</EstimatedCount>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="7f490445-ef78-4790-972b-f3931787e1e0">
+        <KeyColumn dwd:design-time-name="01479186-e995-4429-ab26-c9dbc0fd3900">
           <DataType>WChar</DataType>
           <DataSize>11</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="be01819d-8810-45c6-873f-7040fbadf476">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bf419a05-1638-4e33-83ea-0a8e914113d0">
             <TableID>dbo_Employee</TableID>
             <ColumnID>PESEL</ColumnID>
           </Source>
@@ -154,14 +156,15 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="80094a54-9b75-4427-961f-3eb4c6c78179">
+    <Attribute dwd:design-time-name="03aaeb30-b27d-4419-b334-7eb1ecfef9c1">
       <ID>Name Surname</ID>
       <Name>Name Surname</Name>
+      <EstimatedCount>9298</EstimatedCount>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="044386d8-fd93-4b55-8c78-7d19a168d589">
+        <KeyColumn dwd:design-time-name="1d6bcd15-7f0b-4c75-887b-0bcb636afd37">
           <DataType>WChar</DataType>
           <DataSize>45</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="94243837-b699-421e-aab8-a7093b6ab121">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="278c0ccb-3495-4775-b2aa-5e0adbd9db0d">
             <TableID>dbo_Employee</TableID>
             <ColumnID>name_surname</ColumnID>
           </Source>
@@ -170,14 +173,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="898e6d80-f6dc-4b66-970d-c1cd74b4bac5">
+    <Attribute dwd:design-time-name="efa56579-3863-40ca-a879-a8119696a6a3">
       <ID>Education</ID>
       <Name>Education</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="486cdf0c-af48-45df-9133-8591b24d9c15">
+        <KeyColumn dwd:design-time-name="21054764-9998-416f-a3dd-bc65beb96396">
           <DataType>WChar</DataType>
           <DataSize>14</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="d86459d8-15ed-406d-b432-1d88cc7f20b4">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5dd22a9c-5771-43e0-85a8-d6fa25f4937d">
             <TableID>dbo_Employee</TableID>
             <ColumnID>education</ColumnID>
           </Source>
@@ -186,14 +189,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="6e7e8d2c-f1e9-454e-a2fe-97ce072988d9">
+    <Attribute dwd:design-time-name="a1fb3966-08fb-4c36-bc02-c04d7ed171ac">
       <ID>Seniority</ID>
       <Name>Seniority</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="9619d61a-58b6-4a04-939c-81b78d9d85de">
+        <KeyColumn dwd:design-time-name="e62d2151-01c1-4c0c-9361-23c153a53729">
           <DataType>WChar</DataType>
           <DataSize>27</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="653cc62e-b7ab-447b-a134-235cadc21996">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3f0631d4-2fad-492e-a20e-5c09c9319278">
             <TableID>dbo_Employee</TableID>
             <ColumnID>seniority</ColumnID>
           </Source>
@@ -202,13 +205,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="3fb4164c-219e-4f87-b64d-bb2907be2542">
+    <Attribute dwd:design-time-name="eb88809b-d15a-41de-8051-4853901f1a46">
       <ID>Is Active</ID>
       <Name>Is Active</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="a6fb09aa-2343-49c1-9f87-094ec5aa1502">
+        <KeyColumn dwd:design-time-name="848a8ae6-f70d-431e-a420-8c073b4fcf61">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="d027c06c-93d7-452e-93f5-c69c7177ba95">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="312a1561-4d17-49be-9329-38f889deec1f">
             <TableID>dbo_Employee</TableID>
             <ColumnID>is_active</ColumnID>
           </Source>

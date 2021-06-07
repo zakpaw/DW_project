@@ -12,7 +12,7 @@ HOME_DIR = Path(os.getcwd()).parent
 
 
 class DB_entity(object):
-    LENGTH = 10000
+    LENGTH = 15100
     T = 0
     def __init__(self, name:str, data:dict):
         self.name = name
@@ -26,7 +26,10 @@ class DB_entity(object):
         if self.name != 'Agency_Network_Excel':
             strCols = df.select_dtypes('object').columns
             fun = lambda x: x.str.replace('\n', '')
-            df[strCols] = df[strCols].apply(fun, axis=0)
+            try:
+                df[strCols] = df[strCols].apply(fun, axis=0)
+            except Exception:
+                pass
 
         mode = "w" if self.T == 0 else "a"
         header = "infer" if self.T == 0 else None
@@ -120,10 +123,11 @@ def main():
             fake_data = defaultdict(list)
             for id in range(int(lens[tab]/2)):
                 if tab == 'Flight':
-                    offerID = int(id % DB_entity.LENGTH / 2 + (DB_entity.LENGTH/2 * period))
-                    tables[tab](fake_data, fake, id + int(DB_entity.LENGTH/2) * period, offerID)
+                    # offerID = int(id % lens[tab] / 2 + (lens[tab]/2 / period))
+                    offerID = int((id + (int(lens[tab]/2) * period)) / 2)
+                    tables[tab](fake_data, fake, id + (int(lens[tab]/2) * period), offerID)
                 else:
-                    tables[tab](fake_data, fake, id + int(DB_entity.LENGTH/2) * period)
+                    tables[tab](fake_data, fake, id + (int(lens[tab]/2) * period))
                 
             path = os.path.join(HOME_DIR, "db", f"load_csv_{period}.sql")
 

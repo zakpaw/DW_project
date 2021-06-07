@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>Default</ProcessingOption>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -19,84 +19,84 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>gZFTF1YtKn1NFYTn9etKsleTcIQ=15/05/2021 17:28:5809/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>gZFTF1YtKn1NFYTn9etKsleTcIQ=16/05/2021 18:35:0917/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Agency DW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>A6QguIfdI1oD97A7Bt6xbIVG1ew=10/05/2021 09:04:0809/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>A6QguIfdI1oD97A7Bt6xbIVG1ew=16/05/2021 18:35:0917/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Agency DW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>COiOdjWIrCehWBTduzrFHLJlOIc=10/05/2021 09:04:0809/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>1YL8DSoSWx9dlGszncE+5X/M9Zw=21/05/2021 12:43:0517/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Destination Airport</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>XKhCRrel16CZfTW6wVV1gXMjsGI=10/05/2021 09:04:0809/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>nDeh8pCttU0ZVBU0N4hWhhNIH9M=21/05/2021 12:43:0517/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Hotel</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>rbKWYPQkvPePcXuJ63Fgg10vV4M=10/05/2021 09:04:0809/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>2vQZY+5GKkXMXXWp8NafrkLy4JI=21/05/2021 12:43:0517/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Time</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>bAb9PLSuOyFNse8F+3KUVOspnuc=10/05/2021 09:04:0809/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>pmscThSa+tkrvVr9sV6SKGUJpgA=21/05/2021 12:43:0517/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Local Airport</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>nhL6gjNDlRMrW7Vmx7ms1W6+7g8=10/05/2021 09:04:0809/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>/5X66PqulNjwgQeVGjKnMk0XfJE=21/05/2021 13:04:3317/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Airline</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>G5+Sco1Pom+H4k3XskSxsPkZDaA=16/05/2021 13:10:2709/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>bpIK/Nz05MCbUV/ejDM+fRvUpmk=21/05/2021 12:43:0517/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Flights</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>eaGtrQh+UJsKNi3nNLEn8wwrDJ0=10/05/2021 09:04:0809/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>+fhYNN7tkgHquAel7yW8MhAHWbY=21/05/2021 12:43:0517/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Date</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>Q1kXz2YAA6iLpmK5VGrc2KypIE4=10/05/2021 09:04:0809/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>XJ6pT7vgxwp/tAtvyWAzEMY61HE=21/05/2021 12:52:0317/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Employee</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>ziQXoL4aD4orYLuU4+DJtmszFWA=10/05/2021 09:04:0809/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>qb2m1V5q0yxUj2tsz2Eb+4MF+Es=21/05/2021 12:43:0517/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Travel Agency</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>TXuoPu2LbjbTnPPAIOBe4jRnPps=16/05/2021 15:12:3109/05/2021 22:11:07Jou3eG47oiE43lJmzZ/50lEzjow=16/05/2021 15:12:3109/05/2021 22:11:07</TimeStamp>
+        <TimeStamp>A55Wsb9lDzXv3KMhfKjHxVzDSnM=04/06/2021 15:15:5417/05/2021 09:21:06ed25DPGaMTwQI3PgLpOocv6D0bk=21/05/2021 13:48:4417/05/2021 09:21:06</TimeStamp>
         <ID>
           <String>Agency DW</String>
         </ID>
@@ -104,7 +104,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>X0Sk09w2Jo2UHR2Ywx0cAOJAxmE=10/05/2021 09:04:0809/05/2021 22:11:07</TimeStamp>
+      <TimeStamp>X0Sk09w2Jo2UHR2Ywx0cAOJAxmE=16/05/2021 18:35:0917/05/2021 09:21:06</TimeStamp>
       <ID>
         <String>Agency_DW_visual</String>
       </ID>
@@ -113,5 +113,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2021-05-16T13:12:35.856667Z</LastDeployed>
+  <LastDeployed>2021-06-04T13:57:04.546667Z</LastDeployed>
 </DeploymentSnapshot>
